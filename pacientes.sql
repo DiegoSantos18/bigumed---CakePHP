@@ -32,7 +32,7 @@ CREATE TABLE `pacientes` (
   `cpf` char(11) CHARACTER SET utf8 NOT NULL,
   `rg` varchar(25) CHARACTER SET utf8 NOT NULL,
   `numero_convenio` varchar(30) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=uft8;
 
 --
 -- Indexes for dumped tables
