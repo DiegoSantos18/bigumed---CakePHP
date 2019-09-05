@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Set-2019 às 02:53
+-- Generation Time: 05-Set-2019 às 06:05
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -35,16 +35,17 @@ CREATE TABLE `usuarios` (
   `nome_completo` varchar(50) DEFAULT NULL,
   `tipo` int(1) NOT NULL,
   `dt_criacao` datetime DEFAULT NULL,
-  `dt_modificacao` datetime DEFAULT NULL
+  `dt_modificacao` datetime DEFAULT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`usuario_id`, `cpf`, `senha`, `nome_completo`, `tipo`, `dt_criacao`, `dt_modificacao`) VALUES
-(1, '04053085071', '12345', 'Diego Santos', 1, '2019-09-03 22:00:00', '2019-09-03 22:01:00'),
-(2, '03500088090', '123456', 'Henrique Dario Müller', 2, '2019-09-04 00:00:00', '2019-09-04 00:00:00');
+INSERT INTO `usuarios` (`usuario_id`, `cpf`, `senha`, `nome_completo`, `tipo`, `dt_criacao`, `dt_modificacao`, `ativo`) VALUES
+(1, '04053085071', '12345', 'Diego Santos', 1, '2019-09-03 22:00:00', '2019-09-03 22:01:00', 0),
+(2, '03500088090', '123456', 'Henrique Dario Müller', 2, '2019-09-04 00:00:00', '2019-09-04 00:00:00', 0);
 
 --
 -- Indexes for dumped tables
