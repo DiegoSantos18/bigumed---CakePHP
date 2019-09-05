@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Set-2019 às 01:38
+-- Generation Time: 05-Set-2019 às 02:12
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -29,9 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pacientes` (
-  `cpf` char(11) CHARACTER SET utf8 NOT NULL,
-  `rg` varchar(25) CHARACTER SET utf8 NOT NULL,
-  `numero_convenio` varchar(30) CHARACTER SET utf8 NOT NULL
+  `usuario_id` int(10) UNSIGNED NOT NULL,
+  `cpf` char(11) NOT NULL,
+  `rg` varchar(25) NOT NULL,
+  `numero_convenio` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -42,7 +43,8 @@ CREATE TABLE `pacientes` (
 -- Indexes for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  ADD PRIMARY KEY (`cpf`);
+  ADD PRIMARY KEY (`cpf`),
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- Constraints for dumped tables
@@ -52,7 +54,7 @@ ALTER TABLE `pacientes`
 -- Limitadores para a tabela `pacientes`
 --
 ALTER TABLE `pacientes`
-  ADD CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`cpf`) REFERENCES `usuario` (`cpf`);
+  ADD CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
