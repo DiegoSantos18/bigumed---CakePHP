@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Set-2019 às 02:12
+-- Generation Time: 05-Set-2019 às 02:20
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pacientes` (
+  `paciente_id` int(10) UNSIGNED NOT NULL,
   `usuario_id` int(10) UNSIGNED NOT NULL,
   `cpf` char(11) NOT NULL,
   `rg` varchar(25) NOT NULL,
@@ -43,7 +44,8 @@ CREATE TABLE `pacientes` (
 -- Indexes for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  ADD PRIMARY KEY (`cpf`),
+  ADD PRIMARY KEY (`paciente_id`),
+  ADD UNIQUE KEY `cpf` (`cpf`),
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
