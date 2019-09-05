@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Set-2019 às 05:25
+-- Generation Time: 05-Set-2019 às 02:52
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `medicos` (
-  `cpf` char(11) NOT NULL,
+  `medico_id` int(10) NOT NULL,
+  `usuario_id` int(10) UNSIGNED NOT NULL,
   `crm` varchar(20) NOT NULL,
   `especialidade` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -38,8 +39,8 @@ CREATE TABLE `medicos` (
 -- Extraindo dados da tabela `medicos`
 --
 
-INSERT INTO `medicos` (`cpf`, `crm`, `especialidade`) VALUES
-('04053085071', '0102030405', 'pediatra');
+INSERT INTO `medicos` (`medico_id`, `usuario_id`, `crm`, `especialidade`) VALUES
+(1, 1, '48546689', 'pediatra');
 
 --
 -- Indexes for dumped tables
@@ -49,8 +50,18 @@ INSERT INTO `medicos` (`cpf`, `crm`, `especialidade`) VALUES
 -- Indexes for table `medicos`
 --
 ALTER TABLE `medicos`
-  ADD PRIMARY KEY (`cpf`,`crm`),
-  ADD UNIQUE KEY `cpf` (`cpf`);
+  ADD PRIMARY KEY (`medico_id`),
+  ADD UNIQUE KEY `usuario_id` (`usuario_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `medicos`
+--
+ALTER TABLE `medicos`
+  MODIFY `medico_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -60,7 +71,7 @@ ALTER TABLE `medicos`
 -- Limitadores para a tabela `medicos`
 --
 ALTER TABLE `medicos`
-  ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`cpf`) REFERENCES `usuario` (`cpf`);
+  ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
