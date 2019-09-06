@@ -17,16 +17,16 @@
     <h3><?= h($medicamento->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Nomepopular') ?></th>
-            <td><?= h($medicamento->nomepopular) ?></td>
+            <th scope="row"><?= __('Nome Popular') ?></th>
+            <td><?= h($medicamento->nome_popular) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Nometecnico') ?></th>
-            <td><?= h($medicamento->nometecnico) ?></td>
+            <th scope="row"><?= __('Nome Tecnico') ?></th>
+            <td><?= h($medicamento->nome_tecnico) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($medicamento->id) ?></td>
+            <th scope="row"><?= __('Medicamento Id') ?></th>
+            <td><?= $this->Number->format($medicamento->medicamento_id) ?></td>
         </tr>
     </table>
     <div class="row">
@@ -38,8 +38,8 @@
         <?= $this->Text->autoParagraph(h($medicamento->composicao)); ?>
     </div>
     <div class="row">
-        <h4><?= __('Contraindicacoes') ?></h4>
-        <?= $this->Text->autoParagraph(h($medicamento->contraindicacoes)); ?>
+        <h4><?= __('Contra Indicacoes') ?></h4>
+        <?= $this->Text->autoParagraph(h($medicamento->contra_indicacoes)); ?>
     </div>
     <div class="row">
         <h4><?= __('Indicacao') ?></h4>

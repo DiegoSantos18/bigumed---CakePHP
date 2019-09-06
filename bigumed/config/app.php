@@ -76,7 +76,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', 'b4c9616d8a6b607c28a3ce59ef54a23919c46d1aadb48e98e4be6f1b65535852'),
+        'salt' => env('SECURITY_SALT', 'b0b63ef2cefb036924226bc64ddb03490d1d23175837ee5894f9754a361de437'),
     ],
 
     /**
@@ -266,6 +266,7 @@ return [
             'username' => 'root',
             'password' => '',
             'database' => 'bigumed',
+            'encoding' => 'utf8',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */

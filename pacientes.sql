@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Set-2019 às 02:54
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.2.12
+-- Generation Time: 06-Set-2019 às 09:47
+-- Versão do servidor: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,17 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `pacientes` (
   `paciente_id` int(10) UNSIGNED NOT NULL,
-  `usuario_id` int(10) UNSIGNED NOT NULL,
   `rg` varchar(25) NOT NULL,
-  `numero_convenio` varchar(30) NOT NULL
+  `numero_convenio` varchar(30) NOT NULL,
+  `usuario_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `pacientes`
---
-
-INSERT INTO `pacientes` (`paciente_id`, `usuario_id`, `rg`, `numero_convenio`) VALUES
-(1, 2, '3104467117', '58585858');
 
 --
 -- Indexes for dumped tables
@@ -51,7 +44,8 @@ INSERT INTO `pacientes` (`paciente_id`, `usuario_id`, `rg`, `numero_convenio`) V
 --
 ALTER TABLE `pacientes`
   ADD PRIMARY KEY (`paciente_id`),
-  ADD UNIQUE KEY `usuario_id` (`usuario_id`);
+  ADD UNIQUE KEY `rg` (`rg`,`numero_convenio`),
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -61,7 +55,7 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `paciente_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `paciente_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -71,7 +65,7 @@ ALTER TABLE `pacientes`
 -- Limitadores para a tabela `pacientes`
 --
 ALTER TABLE `pacientes`
-  ADD CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`);
+  ADD CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`usuario_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

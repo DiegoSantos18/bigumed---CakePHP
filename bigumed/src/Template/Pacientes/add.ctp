@@ -8,8 +8,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Pacientes'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Usuarios'), ['controller' => 'Usuarios', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Usuario'), ['controller' => 'Usuarios', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="pacientes form large-9 medium-8 columns content">
@@ -17,10 +15,9 @@
     <fieldset>
         <legend><?= __('Add Paciente') ?></legend>
         <?php
-            echo $this->Form->control('usuario_id', ['options' => $usuarios]);
-            echo $this->Form->control('cpf');
             echo $this->Form->control('rg');
             echo $this->Form->control('numero_convenio');
+            echo $this->Form->control('usuario_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

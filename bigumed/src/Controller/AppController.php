@@ -14,7 +14,6 @@
  */
 namespace App\Controller;
 
-
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 
@@ -42,29 +41,38 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        //$this->loadComponent('Auth');
+
         $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'cpf',
+                        'password' => 'senha'
+                    ]
+                ]
+            ],
             'loginRedirect' => [
-                'controller' => 'Articles',
+                'controller' => 'Users',
                 'action' => 'index'
             ],
-            'logoutRedirect' => [
-                'controller' => 'Pages',
-                'action' => 'display',
-                'home'
+            'loginRedirect' => [
+                'controller' => 'Users',
+                'action' => 'index'
             ]
         ]);
-        /*
-         * Enable the following component for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
+        //------------------------------------
+    
+        $this->Auth->allow(['display', 'view', 'index']);
     }
+
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index', 'view', 'display']);
+        //aqui mexi
+        $this->Auth->allow();
+        $this->viewBuilder()->setLayout('default');
     }
+  
 }

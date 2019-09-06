@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Pacientes Model
  *
- * @property \App\Model\Table\UsuariosTable&\Cake\ORM\Association\BelongsTo $Usuarios
+ * @property &\Cake\ORM\Association\BelongsTo $Users
  *
  * @method \App\Model\Entity\Paciente get($primaryKey, $options = [])
  * @method \App\Model\Entity\Paciente newEntity($data = null, array $options = [])
@@ -36,7 +36,7 @@ class PacientesTable extends Table
         $this->setDisplayField('paciente_id');
         $this->setPrimaryKey('paciente_id');
 
-        $this->belongsTo('Usuarios', [
+        $this->belongsTo('Users', [
             'foreignKey' => 'usuario_id',
             'joinType' => 'INNER'
         ]);
@@ -53,13 +53,6 @@ class PacientesTable extends Table
         $validator
             ->nonNegativeInteger('paciente_id')
             ->allowEmptyString('paciente_id', null, 'create');
-
-        $validator
-            ->scalar('cpf')
-            ->maxLength('cpf', 11)
-            ->requirePresence('cpf', 'create')
-            ->notEmptyString('cpf')
-            ->add('cpf', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('rg')
@@ -85,8 +78,7 @@ class PacientesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['cpf']));
-        $rules->add($rules->existsIn(['usuario_id'], 'Usuarios'));
+        $rules->add($rules->existsIn(['usuario_id'], 'Users'));
 
         return $rules;
     }

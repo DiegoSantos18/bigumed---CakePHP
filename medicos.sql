@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Set-2019 às 02:52
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.2.12
+-- Generation Time: 06-Set-2019 às 09:47
+-- Versão do servidor: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,18 +29,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `medicos` (
-  `medico_id` int(10) NOT NULL,
-  `usuario_id` int(10) UNSIGNED NOT NULL,
+  `medico_id` int(10) UNSIGNED NOT NULL,
   `crm` varchar(20) NOT NULL,
-  `especialidade` varchar(50) NOT NULL
+  `especialidade` varchar(50) NOT NULL,
+  `usuario_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `medicos`
---
-
-INSERT INTO `medicos` (`medico_id`, `usuario_id`, `crm`, `especialidade`) VALUES
-(1, 1, '48546689', 'pediatra');
 
 --
 -- Indexes for dumped tables
@@ -51,7 +44,8 @@ INSERT INTO `medicos` (`medico_id`, `usuario_id`, `crm`, `especialidade`) VALUES
 --
 ALTER TABLE `medicos`
   ADD PRIMARY KEY (`medico_id`),
-  ADD UNIQUE KEY `usuario_id` (`usuario_id`);
+  ADD UNIQUE KEY `crm` (`crm`),
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -61,7 +55,7 @@ ALTER TABLE `medicos`
 -- AUTO_INCREMENT for table `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `medico_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `medico_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -71,7 +65,7 @@ ALTER TABLE `medicos`
 -- Limitadores para a tabela `medicos`
 --
 ALTER TABLE `medicos`
-  ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`);
+  ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`usuario_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

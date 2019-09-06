@@ -8,8 +8,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Paciente'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Usuarios'), ['controller' => 'Usuarios', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Usuario'), ['controller' => 'Usuarios', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="pacientes index large-9 medium-8 columns content">
@@ -18,10 +16,9 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('paciente_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('usuario_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cpf') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('rg') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('numero_convenio') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('usuario_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,10 +26,9 @@
             <?php foreach ($pacientes as $paciente): ?>
             <tr>
                 <td><?= $this->Number->format($paciente->paciente_id) ?></td>
-                <td><?= $paciente->has('usuario') ? $this->Html->link($paciente->usuario->usuario_id, ['controller' => 'Usuarios', 'action' => 'view', $paciente->usuario->usuario_id]) : '' ?></td>
-                <td><?= h($paciente->cpf) ?></td>
                 <td><?= h($paciente->rg) ?></td>
                 <td><?= h($paciente->numero_convenio) ?></td>
+                <td><?= $this->Number->format($paciente->usuario_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $paciente->paciente_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $paciente->paciente_id]) ?>

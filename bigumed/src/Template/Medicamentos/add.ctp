@@ -15,11 +15,12 @@
     <fieldset>
         <legend><?= __('Add Medicamento') ?></legend>
         <?php
-            echo $this->Form->control('nomepopular');
-            echo $this->Form->control('nometecnico');
+            echo $this->Form->control('medicamento_id');
+            echo $this->Form->control('nome_popular');
+            echo $this->Form->control('nome_tecnico');
             echo $this->Form->control('tipo');
             echo $this->Form->control('composicao');
-            echo $this->Form->control('contraindicacoes');
+            echo $this->Form->control('contra_indicacoes');
             echo $this->Form->control('indicacao');
             echo $this->Form->control('posologia');
         ?>

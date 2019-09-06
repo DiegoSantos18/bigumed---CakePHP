@@ -6,14 +6,14 @@ use Cake\ORM\Entity;
 /**
  * Medicamento Entity
  *
- * @property int $id
- * @property string|null $nomepopular
- * @property string|null $nometecnico
+ * @property int $medicamento_id
+ * @property string|null $nome_popular
+ * @property string $nome_tecnico
  * @property string|null $tipo
- * @property string|null $composicao
- * @property string|null $contraindicacoes
- * @property string|null $indicacao
- * @property string|null $posologia
+ * @property string $composicao
+ * @property string $contra_indicacoes
+ * @property string $indicacao
+ * @property string $posologia
  */
 class Medicamento extends Entity
 {
@@ -27,11 +27,11 @@ class Medicamento extends Entity
      * @var array
      */
     protected $_accessible = [
-        'nomepopular' => true,
-        'nometecnico' => true,
+        'nome_popular' => true,
+        'nome_tecnico' => true,
         'tipo' => true,
         'composicao' => true,
-        'contraindicacoes' => true,
+        'contra_indicacoes' => true,
         'indicacao' => true,
         'posologia' => true
     ];

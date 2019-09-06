@@ -7,10 +7,9 @@ use Cake\ORM\Entity;
  * Paciente Entity
  *
  * @property int $paciente_id
- * @property int $usuario_id
- * @property string $cpf
  * @property string $rg
  * @property string $numero_convenio
+ * @property int $usuario_id
  *
  * @property \App\Model\Entity\Usuario $usuario
  */
@@ -26,10 +25,9 @@ class Paciente extends Entity
      * @var array
      */
     protected $_accessible = [
-        'usuario_id' => true,
-        'cpf' => true,
         'rg' => true,
         'numero_convenio' => true,
+        'usuario_id' => true,
         'usuario' => true
     ];
 }

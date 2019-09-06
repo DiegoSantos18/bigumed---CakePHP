@@ -44,18 +44,19 @@ class MedicamentosTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->nonNegativeInteger('medicamento_id')
+            ->allowEmptyString('medicamento_id', null, 'create');
 
         $validator
-            ->scalar('nomepopular')
-            ->maxLength('nomepopular', 50)
-            ->allowEmptyString('nomepopular');
+            ->scalar('nome_popular')
+            ->maxLength('nome_popular', 50)
+            ->allowEmptyString('nome_popular');
 
         $validator
-            ->scalar('nometecnico')
-            ->maxLength('nometecnico', 50)
-            ->allowEmptyString('nometecnico');
+            ->scalar('nome_tecnico')
+            ->maxLength('nome_tecnico', 50)
+            ->requirePresence('nome_tecnico', 'create')
+            ->notEmptyString('nome_tecnico');
 
         $validator
             ->scalar('tipo')
@@ -63,19 +64,23 @@ class MedicamentosTable extends Table
 
         $validator
             ->scalar('composicao')
-            ->allowEmptyString('composicao');
+            ->requirePresence('composicao', 'create')
+            ->notEmptyString('composicao');
 
         $validator
-            ->scalar('contraindicacoes')
-            ->allowEmptyString('contraindicacoes');
+            ->scalar('contra_indicacoes')
+            ->requirePresence('contra_indicacoes', 'create')
+            ->notEmptyString('contra_indicacoes');
 
         $validator
             ->scalar('indicacao')
-            ->allowEmptyString('indicacao');
+            ->requirePresence('indicacao', 'create')
+            ->notEmptyString('indicacao');
 
         $validator
             ->scalar('posologia')
-            ->allowEmptyString('posologia');
+            ->requirePresence('posologia', 'create')
+            ->notEmptyString('posologia');
 
         return $validator;
     }
