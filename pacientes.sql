@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Set-2019 às 09:47
--- Versão do servidor: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: 07-Set-2019 às 01:02
+-- Versão do servidor: 10.1.37-MariaDB
+-- versão do PHP: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,6 +36,15 @@ CREATE TABLE `pacientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Extraindo dados da tabela `pacientes`
+--
+
+INSERT INTO `pacientes` (`paciente_id`, `rg`, `numero_convenio`, `usuario_id`) VALUES
+(1, '3104467117', '11111111', 8),
+(2, '306104878', '22225578', 9),
+(3, '263582656', '445875487', 10);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +64,7 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `paciente_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `paciente_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
