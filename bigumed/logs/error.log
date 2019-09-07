@@ -1577,3 +1577,256 @@ Request URL: /users/add
 Referer URL: http://localhost/CakePHP/bigumed---CakePHP/bigumed/users/add
 
 
+2019-09-06 22:50:30 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Driver.php, line 92]
+Request URL: /users/login
+Referer URL: http://localhost/CakePHP/bigumed---CakePHP/bigumed/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 229
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 109
+[main] - [internal], line ??
+
+
+
+2019-09-06 22:50:36 Error: [Cake\Error\FatalErrorException] Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Driver.php on line 92
+Stack Trace:
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(109): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 92)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+Request URL: /users/login
+Referer URL: http://localhost/CakePHP/bigumed---CakePHP/bigumed/users/login
+2019-09-06 23:20:01 Error: [InvalidArgumentException] Unknown type ""
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2169): Cake\Database\Type::build(NULL)
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2096): Cake\ORM\Table->_newId(Array)
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2021): Cake\ORM\Table->_insert(Object(App\Model\Entity\Medicamento), Array)
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1934): Cake\ORM\Table->_processSave(Object(App\Model\Entity\Medicamento), Object(ArrayObject))
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1639): Cake\ORM\Table->Cake\ORM\{closure}()
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Connection.php(738): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1640): Cake\Database\Connection->transactional(Object(Closure))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1935): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\src\Controller\MedicamentosController.php(53): Cake\ORM\Table->save(Object(App\Model\Entity\Medicamento))
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Controller\Controller.php(610): App\Controller\MedicamentosController->add()
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MedicamentosController))
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#26 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#29 {main}
+Request URL: /medicamentos/add
+Referer URL: http://localhost/CakePHP/bigumed---CakePHP/bigumed/medicamentos/add
+
+
+2019-09-06 23:25:31 Error: [InvalidArgumentException] Unknown type ""
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2169): Cake\Database\Type::build(NULL)
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2096): Cake\ORM\Table->_newId(Array)
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2021): Cake\ORM\Table->_insert(Object(App\Model\Entity\Medicamento), Array)
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1934): Cake\ORM\Table->_processSave(Object(App\Model\Entity\Medicamento), Object(ArrayObject))
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1639): Cake\ORM\Table->Cake\ORM\{closure}()
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Connection.php(738): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1640): Cake\Database\Connection->transactional(Object(Closure))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1935): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\src\Controller\MedicamentosController.php(53): Cake\ORM\Table->save(Object(App\Model\Entity\Medicamento))
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Controller\Controller.php(610): App\Controller\MedicamentosController->add()
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MedicamentosController))
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#26 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#29 {main}
+Request URL: /medicamentos/add
+Referer URL: http://localhost/CakePHP/bigumed---CakePHP/bigumed/medicamentos/add
+
+
+2019-09-06 23:29:43 Error: [InvalidArgumentException] Unknown type ""
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2169): Cake\Database\Type::build(NULL)
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2096): Cake\ORM\Table->_newId(Array)
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(2021): Cake\ORM\Table->_insert(Object(App\Model\Entity\Medicamento), Array)
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1934): Cake\ORM\Table->_processSave(Object(App\Model\Entity\Medicamento), Object(ArrayObject))
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1639): Cake\ORM\Table->Cake\ORM\{closure}()
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Connection.php(738): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1640): Cake\Database\Connection->transactional(Object(Closure))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Table.php(1935): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\src\Controller\MedicamentosController.php(53): Cake\ORM\Table->save(Object(App\Model\Entity\Medicamento))
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Controller\Controller.php(610): App\Controller\MedicamentosController->add()
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MedicamentosController))
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#26 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#29 {main}
+Request URL: /medicamentos/add
+Referer URL: http://localhost/CakePHP/bigumed---CakePHP/bigumed/medicamentos/add
+
+
+2019-09-06 23:31:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicamentos.id' in 'on clause'
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Connection.php(334): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(68): Cake\Database\Connection->Cake\Database\{closure}()
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Connection.php(337): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Database\Query.php(219): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(309): Cake\ORM\Query->_execute()
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Datasource\Paginator.php(186): Cake\ORM\Query->all()
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(201): Cake\Datasource\Paginator->paginate(Object(App\Model\Table\PrescricoesTable), Array, Array)
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Controller\Controller.php(891): Cake\Controller\Component\PaginatorComponent->paginate(Object(App\Model\Table\PrescricoesTable), Array)
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\src\Controller\PrescricoesController.php(25): Cake\Controller\Controller->paginate(Object(App\Model\Table\PrescricoesTable))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Controller\Controller.php(610): App\Controller\PrescricoesController->index()
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PrescricoesController))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#29 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#31 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#32 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#33 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#34 {main}
+Request URL: /prescricoes
+
+
+2019-09-06 23:32:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Prescrico could not be found.
+Exception Attributes: array (
+  'class' => 'Prescrico',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(39): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(91): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+Request URL: /prescrico
+
+
+2019-09-06 23:34:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Prescrico could not be found.
+Exception Attributes: array (
+  'class' => 'Prescrico',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(39): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(91): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+Request URL: /prescrico
+
+
+2019-09-06 23:34:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Medico could not be found.
+Exception Attributes: array (
+  'class' => 'Medico',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+#0 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(39): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(91): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\BaseApplication.php(235): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#5 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php(123): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\Middleware\CsrfProtectionMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(168): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\vendor\cakephp\cakephp\src\Http\Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\CakePHP\bigumed---CakePHP\bigumed\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+Request URL: /medico/
+
+
