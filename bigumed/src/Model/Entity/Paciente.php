@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property string $numero_convenio
  * @property int $usuario_id
  *
- * @property \App\Model\Entity\Usuario $usuario
+ * @property \App\Model\Entity\User $user
  */
 class Paciente extends Entity
 {
@@ -28,6 +28,6 @@ class Paciente extends Entity
         'rg' => true,
         'numero_convenio' => true,
         'usuario_id' => true,
-        'usuario' => true
+        'user' => true
     ];
 }
