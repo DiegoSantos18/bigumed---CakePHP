@@ -6,20 +6,20 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Prescricoes'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Medicos'), ['controller' => 'Medicos', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Medico'), ['controller' => 'Medicos', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Pacientes'), ['controller' => 'Pacientes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Paciente'), ['controller' => 'Pacientes', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Medicamentos'), ['controller' => 'Medicamentos', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Medicamento'), ['controller' => 'Medicamentos', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Listar Prescrições'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listar Médicos'), ['controller' => 'Medicos', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Novo Médico'), ['controller' => 'Medicos', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Pacientes'), ['controller' => 'Pacientes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Novo Paciente'), ['controller' => 'Pacientes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Medicamentos'), ['controller' => 'Medicamentos', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Novo Medicamento'), ['controller' => 'Medicamentos', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="prescricoes form large-9 medium-8 columns content">
     <?= $this->Form->create($prescrico) ?>
     <fieldset>
-        <legend><?= __('Add Prescrico') ?></legend>
+        <legend><?= __('Adicionar Prescrição') ?></legend>
         <?php
             echo $this->Form->control('periodicidade');
             echo $this->Form->control('quantidade');
@@ -31,6 +31,6 @@
             echo $this->Form->control('medicamento_id', ['options' => $medicamentos]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Adicionar')) ?>
     <?= $this->Form->end() ?>
 </div>
