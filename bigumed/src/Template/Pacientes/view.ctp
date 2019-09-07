@@ -11,6 +11,8 @@
         <li><?= $this->Form->postLink(__('Delete Paciente'), ['action' => 'delete', $paciente->paciente_id], ['confirm' => __('Are you sure you want to delete # {0}?', $paciente->paciente_id)]) ?> </li>
         <li><?= $this->Html->link(__('List Pacientes'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Paciente'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="pacientes view large-9 medium-8 columns content">
@@ -25,12 +27,12 @@
             <td><?= h($paciente->numero_convenio) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Paciente Id') ?></th>
-            <td><?= $this->Number->format($paciente->paciente_id) ?></td>
+            <th scope="row"><?= __('User') ?></th>
+            <td><?= $paciente->has('user') ? $this->Html->link($paciente->user->usuario_id, ['controller' => 'Users', 'action' => 'view', $paciente->user->usuario_id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Usuario Id') ?></th>
-            <td><?= $this->Number->format($paciente->usuario_id) ?></td>
+            <th scope="row"><?= __('Paciente Id') ?></th>
+            <td><?= $this->Number->format($paciente->paciente_id) ?></td>
         </tr>
     </table>
 </div>

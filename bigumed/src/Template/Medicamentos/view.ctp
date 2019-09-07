@@ -25,8 +25,8 @@
             <td><?= h($medicamento->nome_tecnico) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Medicamento Id') ?></th>
-            <td><?= $this->Number->format($medicamento->medicamento_id) ?></td>
+            <th scope="row"><?= __('Medicamentos Id') ?></th>
+            <td><?= $this->Number->format($medicamento->medicamentos_id) ?></td>
         </tr>
     </table>
     <div class="row">
