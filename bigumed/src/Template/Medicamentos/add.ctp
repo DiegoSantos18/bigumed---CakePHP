@@ -15,7 +15,7 @@
     <fieldset>
         <legend><?= __('Add Medicamento') ?></legend>
         <?php
-            echo $this->Form->control('medicamentos_id');
+            echo $this->Form->control('medicamento_id');
             echo $this->Form->control('nome_popular');
             echo $this->Form->control('nome_tecnico');
             echo $this->Form->control('tipo');

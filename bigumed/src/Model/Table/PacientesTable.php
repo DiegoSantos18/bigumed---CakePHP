@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Pacientes Model
  *
- * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Users
+ * @property &\Cake\ORM\Association\BelongsTo $Users
  *
  * @method \App\Model\Entity\Paciente get($primaryKey, $options = [])
  * @method \App\Model\Entity\Paciente newEntity($data = null, array $options = [])

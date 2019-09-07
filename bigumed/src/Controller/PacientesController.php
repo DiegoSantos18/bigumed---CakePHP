@@ -20,7 +20,7 @@ class PacientesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Usuarios']
         ];
         $pacientes = $this->paginate($this->Pacientes);
 
@@ -37,7 +37,7 @@ class PacientesController extends AppController
     public function view($id = null)
     {
         $paciente = $this->Pacientes->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Usuarios']
         ]);
 
         $this->set('paciente', $paciente);
@@ -60,8 +60,8 @@ class PacientesController extends AppController
             }
             $this->Flash->error(__('The paciente could not be saved. Please, try again.'));
         }
-        $users = $this->Pacientes->Users->find('list', ['limit' => 200]);
-        $this->set(compact('paciente', 'users'));
+        $usuarios = $this->Pacientes->Usuarios->find('list', ['limit' => 200]);
+        $this->set(compact('paciente', 'usuarios'));
     }
 
     /**
@@ -85,8 +85,8 @@ class PacientesController extends AppController
             }
             $this->Flash->error(__('The paciente could not be saved. Please, try again.'));
         }
-        $users = $this->Pacientes->Users->find('list', ['limit' => 200]);
-        $this->set(compact('paciente', 'users'));
+        $usuarios = $this->Pacientes->Usuarios->find('list', ['limit' => 200]);
+        $this->set(compact('paciente', 'usuarios'));
     }
 
     /**
