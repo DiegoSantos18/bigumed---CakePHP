@@ -7,9 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Paciente'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Novo Paciente'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Novo Usuário'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="pacientes index large-9 medium-8 columns content">
@@ -21,7 +21,7 @@
                 <th scope="col"><?= $this->Paginator->sort('rg') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('numero_convenio') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('usuario_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -30,11 +30,11 @@
                 <td><?= $this->Number->format($paciente->paciente_id) ?></td>
                 <td><?= h($paciente->rg) ?></td>
                 <td><?= h($paciente->numero_convenio) ?></td>
-                <td><?= $paciente->has('user') ? $this->Html->link($paciente->user->usuario_id, ['controller' => 'Users', 'action' => 'view', $paciente->user->usuario_id]) : '' ?></td>
+                <td><?= $paciente->has('user') ? $this->Html->link($paciente->user->nome_completo, ['controller' => 'Users', 'action' => 'view', $paciente->user->usuario_id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $paciente->paciente_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $paciente->paciente_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $paciente->paciente_id], ['confirm' => __('Are you sure you want to delete # {0}?', $paciente->paciente_id)]) ?>
+                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $paciente->paciente_id]) ?>
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $paciente->paciente_id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $paciente->paciente_id], ['confirm' => __('Você tem certeza que quer deletar o paciente: {0}?', $paciente->paciente_id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
