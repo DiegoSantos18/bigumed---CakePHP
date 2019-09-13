@@ -34,7 +34,7 @@ class MedicamentosController extends AppController
     public function view($id = null)
     {
         $medicamento = $this->Medicamentos->get($id, [
-            'contain' => []
+            'contain' => ['Prescricoes']
         ]);
 
         $this->set('medicamento', $medicamento);

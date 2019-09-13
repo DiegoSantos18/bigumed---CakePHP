@@ -47,7 +47,7 @@ class PrescricoesTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Medicamentos', [
-            'foreignKey' => 'medicamento_id',
+            'foreignKey' => 'medicamentos_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -101,7 +101,7 @@ class PrescricoesTable extends Table
     {
         $rules->add($rules->existsIn(['medico_id'], 'Medicos'));
         $rules->add($rules->existsIn(['paciente_id'], 'Pacientes'));
-        $rules->add($rules->existsIn(['medicamento_id'], 'Medicamentos'));
+        $rules->add($rules->existsIn(['medicamentos_id'], 'Medicamentos'));
 
         return $rules;
     }

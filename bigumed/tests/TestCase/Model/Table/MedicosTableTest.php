@@ -24,7 +24,8 @@ class MedicosTableTest extends TestCase
      */
     public $fixtures = [
         'app.Medicos',
-        'app.Users'
+        'app.Users',
+        'app.Prescricoes'
     ];
 
     /**

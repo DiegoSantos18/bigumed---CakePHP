@@ -54,8 +54,8 @@ class UsersFixture extends TestFixture
                 'sexo' => 'Lorem ipsum dolor sit amet',
                 'roles_id' => 1,
                 'status' => 1,
-                'dt_criacao' => 1567804116,
-                'dt_modificacao' => 1567804116
+                'dt_criacao' => 1568351858,
+                'dt_modificacao' => 1568351858
             ],
         ];
         parent::init();

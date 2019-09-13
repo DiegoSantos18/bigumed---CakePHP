@@ -29,7 +29,7 @@
                 <th scope="col"><?= $this->Paginator->sort('dt_prescricao') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('medico_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('paciente_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('medicamento_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('medicamentos_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -44,7 +44,7 @@
                 <td><?= h($prescrico->dt_prescricao) ?></td>
                 <td><?= $prescrico->has('medico') ? $this->Html->link($prescrico->medico->medico_id, ['controller' => 'Medicos', 'action' => 'view', $prescrico->medico->medico_id]) : '' ?></td>
                 <td><?= $prescrico->has('paciente') ? $this->Html->link($prescrico->paciente->paciente_id, ['controller' => 'Pacientes', 'action' => 'view', $prescrico->paciente->paciente_id]) : '' ?></td>
-                <td><?= $prescrico->has('medicamento') ? $this->Html->link($prescrico->medicamento->id, ['controller' => 'Medicamentos', 'action' => 'view', $prescrico->medicamento->id]) : '' ?></td>
+                <td><?= $this->Number->format($prescrico->medicamentos_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $prescrico->precricao_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $prescrico->precricao_id]) ?>

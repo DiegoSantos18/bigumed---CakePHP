@@ -42,12 +42,12 @@ class User extends Entity
     ];
 
     protected $_hidden = [
-      'senha'  
-    ];
-
-    protected function _setSenha($senha){
-        if(strlen($senha) > 0){
-            return(new DefaultPasswordHasher)->hash($senha);
-        }
-    }
+        'senha'  
+      ];
+  
+      protected function _setSenha($senha){
+          if(strlen($senha) > 0){
+              return(new DefaultPasswordHasher)->hash($senha);
+          }
+      }
 }

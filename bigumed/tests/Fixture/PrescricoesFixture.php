@@ -23,16 +23,16 @@ class PrescricoesFixture extends TestFixture
         'dt_prescricao' => ['type' => 'timestamp', 'length' => null, 'null' => false, 'default' => 'CURRENT_TIMESTAMP', 'comment' => '', 'precision' => null],
         'medico_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'paciente_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'medicamento_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'medicamentos_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'med_pres_ibfk_1' => ['type' => 'index', 'columns' => ['medico_id'], 'length' => []],
             'pac_pres_ibfk_1' => ['type' => 'index', 'columns' => ['paciente_id'], 'length' => []],
-            'medicamento_pres_ibfk_1' => ['type' => 'index', 'columns' => ['medicamento_id'], 'length' => []],
+            'medicamento_pres_ibfk_1' => ['type' => 'index', 'columns' => ['medicamentos_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['precricao_id'], 'length' => []],
             'med_pres_ibfk_1' => ['type' => 'foreign', 'columns' => ['medico_id'], 'references' => ['medicos', 'medico_id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
-            'medicamento_pres_ibfk_1' => ['type' => 'foreign', 'columns' => ['medicamento_id'], 'references' => ['medicamentos', 'medicamento_id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'medicamento_pres_ibfk_1' => ['type' => 'foreign', 'columns' => ['medicamentos_id'], 'references' => ['medicamentos', 'medicamentos_id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
             'pac_pres_ibfk_1' => ['type' => 'foreign', 'columns' => ['paciente_id'], 'references' => ['pacientes', 'paciente_id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
@@ -55,10 +55,10 @@ class PrescricoesFixture extends TestFixture
                 'quantidade' => 1,
                 'duracao' => 'Lorem ipsum dolor sit amet',
                 'observacao' => 'Lorem ipsum dolor sit amet',
-                'dt_prescricao' => 1567747458,
+                'dt_prescricao' => 1568351903,
                 'medico_id' => 1,
                 'paciente_id' => 1,
-                'medicamento_id' => 1
+                'medicamentos_id' => 1
             ],
         ];
         parent::init();

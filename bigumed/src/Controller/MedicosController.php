@@ -37,7 +37,7 @@ class MedicosController extends AppController
     public function view($id = null)
     {
         $medico = $this->Medicos->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Prescricoes']
         ]);
 
         $this->set('medico', $medico);

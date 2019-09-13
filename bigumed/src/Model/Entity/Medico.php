@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property int $usuario_id
  *
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Prescrico[] $prescricoes
  */
 class Medico extends Entity
 {
@@ -28,6 +29,7 @@ class Medico extends Entity
         'crm' => true,
         'especialidade' => true,
         'usuario_id' => true,
-        'user' => true
+        'user' => true,
+        'prescricoes' => true
     ];
 }
