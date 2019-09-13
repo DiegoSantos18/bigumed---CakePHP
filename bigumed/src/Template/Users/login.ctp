@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
+<<<<<<< HEAD
 
 <head>
   <!--Import Google Icon Font-->
@@ -76,3 +77,23 @@
               
 
           
+=======
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Novo Usuário'), ['controller' => 'Users','action' => 'add']) ?></li>
+    </ul>
+</nav>
+<div class="users form large-9 medium-8 columns content">
+    <?= $this->Form->create() ?>
+    <fieldset>
+        <legend><?= __('Login') ?></legend>
+        <?php
+            echo $this->Form->control('cpf');
+            echo $this->Form->control('senha', ['type' => 'password']);
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Entrar')) ?>
+    <?= $this->Form->end() ?>
+</div>
+>>>>>>> 9bb016e749d35e1d670ba7e540bf9b28e131524d
