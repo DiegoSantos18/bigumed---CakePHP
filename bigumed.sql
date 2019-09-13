@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07-Set-2019 às 01:00
+-- Generation Time: 14-Set-2019 às 01:36
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -52,6 +52,13 @@ CREATE TABLE `medicos` (
   `usuario_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `medicos`
+--
+
+INSERT INTO `medicos` (`medico_id`, `crm`, `especialidade`, `usuario_id`) VALUES
+(1, '12345678910', 'Pediatra', 9);
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +71,13 @@ CREATE TABLE `pacientes` (
   `numero_convenio` varchar(30) NOT NULL,
   `usuario_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pacientes`
+--
+
+INSERT INTO `pacientes` (`paciente_id`, `rg`, `numero_convenio`, `usuario_id`) VALUES
+(1, '123456', '122333444455555', 11);
 
 -- --------------------------------------------------------
 
@@ -99,7 +113,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`roles_id`, `role`) VALUES
-(4, 'ADM'),
+(4, 'fer'),
 (5, 'MED'),
 (6, 'PAC');
 
@@ -126,7 +140,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`usuario_id`, `cpf`, `senha`, `nome_completo`, `sexo`, `roles_id`, `status`, `dt_criacao`, `dt_modificacao`) VALUES
-(9, '04053085071', '$2y$10$f2uCyv1l08wSVTxlp48kgOhpopS6.VrYARZeUtefabB6PrxMG0M6W', 'Diego Santos', 'M', 5, 1, '2019-09-06 21:23:00', '2019-09-06 21:38:00');
+(9, '04053085071', '$2y$10$f2uCyv1l08wSVTxlp48kgOhpopS6.VrYARZeUtefabB6PrxMG0M6W', 'Diego Santos', 'M', 5, 1, '2019-09-06 21:23:00', '2019-09-06 21:38:00'),
+(10, '12345678910', '$2y$10$qe5sBQpb2Mq0NVWAOwU/YegXEePb6b83mV.BPyNJKILlHV3tZOKHS', 'admin', 'M', 4, 1, '2019-09-13 05:24:00', '2019-09-13 05:24:00'),
+(11, '98765432100', '$2y$10$l9eIyMX/fEFBUPGu4yjUbejVBjlAgpJkDfyc8vzndZUtSLk0K.C.a', 'Luis Fernando Costa', 'M', 6, 1, '2019-09-13 20:31:00', '2019-09-13 20:31:00'),
+(12, '12345678911', '$2y$10$cDKgkblB9Pf5vhfn4VH2h.aDUFxx4uY97w7e9yIaxhm/Hr5i292PK', 'ifrs feliz', 'M', 6, 1, '2019-09-13 22:18:00', '2019-09-13 22:18:00'),
+(13, '1', '$2y$10$9AcZmNrqaz3kQKhpZbpXFubuPneMTArurcGGcYP6niZQHwCn38dVG', 'ifififif', 'M', 4, 1, '2019-09-13 22:19:00', '2019-09-13 22:19:00');
 
 --
 -- Indexes for dumped tables
@@ -191,25 +209,25 @@ ALTER TABLE `medicamentos`
 -- AUTO_INCREMENT for table `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `medico_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `medico_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `paciente_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `paciente_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `roles_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `roles_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usuario_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `usuario_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
