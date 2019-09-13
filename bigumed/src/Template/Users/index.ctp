@@ -6,15 +6,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-<<<<<<< HEAD
         <li class="heading"><?= __('Funções do Admin') ?></li>
         <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Listar níveis usuário'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Novos níveis usuário'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
-=======
-        <li class="heading"><?= __('Ações') ?></li>
-        <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?></li>
->>>>>>> 9bb016e749d35e1d670ba7e540bf9b28e131524d
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
@@ -40,18 +35,14 @@
                 <td><?= h($user->cpf) ?></td>
                 <td><?= h($user->nome_completo) ?></td>
                 <td><?= h($user->sexo) ?></td>
-                <td><?= $user->has('role') ? $this->Html->link($user->role->role == 'MED' ? 'Médico' : 'Paciente', ['controller' => 'Roles', 'action' => 'view', $user->role->roles_id]) : '' ?></td>
+                <td><?= $user->has('role') ? $this->Html->link($user->role->role, ['controller' => 'Roles', 'action' => 'view', $user->role->roles_id]) : '' ?></td>
                 <td><?= h($user->status ? __('Ativo') : __('Inativo')) ?></td>
                 <td><?= h($user->dt_criacao) ?></td>
                 <td><?= h($user->dt_modificacao) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $user->usuario_id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->usuario_id]) ?>
-<<<<<<< HEAD
                     <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->usuario_id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->usuario_id)]) ?>
-=======
-                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->usuario_id], ['confirm' => __('Você tem certeza que quer deletar usuário: {0}?', $user->nome_completo)]) ?>
->>>>>>> 9bb016e749d35e1d670ba7e540bf9b28e131524d
                 </td>
             </tr>
             <?php endforeach; ?>
