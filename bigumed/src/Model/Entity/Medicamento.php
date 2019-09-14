@@ -6,7 +6,7 @@ use Cake\ORM\Entity;
 /**
  * Medicamento Entity
  *
- * @property int $medicamentos_id
+ * @property int $medicamento_id
  * @property string|null $nome_popular
  * @property string $nome_tecnico
  * @property string|null $tipo
@@ -14,8 +14,6 @@ use Cake\ORM\Entity;
  * @property string $contra_indicacoes
  * @property string $indicacao
  * @property string $posologia
- *
- * @property \App\Model\Entity\Prescrico[] $prescricoes
  */
 class Medicamento extends Entity
 {
@@ -35,7 +33,6 @@ class Medicamento extends Entity
         'composicao' => true,
         'contra_indicacoes' => true,
         'indicacao' => true,
-        'posologia' => true,
-        'prescricoes' => true
+        'posologia' => true
     ];
 }
