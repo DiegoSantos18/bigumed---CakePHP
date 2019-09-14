@@ -37,7 +37,7 @@ class MedicosController extends AppController
     public function view($id = null)
     {
         $medico = $this->Medicos->get($id, [
-            'contain' => ['Users', 'Prescricoes']
+            'contain' => ['Users']
         ]);
 
         $this->set('medico', $medico);
@@ -74,7 +74,7 @@ class MedicosController extends AppController
     public function edit($id = null)
     {
         $medico = $this->Medicos->get($id, [
-            'contain' => []
+            'contain' => ['Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $medico = $this->Medicos->patchEntity($medico, $this->request->getData());

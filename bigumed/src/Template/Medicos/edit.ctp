@@ -6,30 +6,27 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Médicos') ?></li>
+        <li><?= $this->Html->link(__('Listar Médicos'), ['action' => 'index']) ?></li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('Deletar Médico'),
                 ['action' => 'delete', $medico->medico_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $medico->medico_id)]
+                ['confirm' => __('Você tem certeza que deseja deletar o médico: {0}?', $medico->user->nome_completo)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Medicos'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Prescricoes'), ['controller' => 'Prescricoes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Prescrico'), ['controller' => 'Prescricoes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Novo Médico'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="medicos form large-9 medium-8 columns content">
     <?= $this->Form->create($medico) ?>
     <fieldset>
-        <legend><?= __('Edit Medico') ?></legend>
+        <legend><?= __('Editar Médico') ?></legend>
         <?php
-            echo $this->Form->control('crm');
-            echo $this->Form->control('especialidade');
-            echo $this->Form->control('usuario_id', ['options' => $users]);
+            echo $this->Form->input('crm', array('label'=>'CRM'));
+            echo $this->Form->input('especialidade');
+            echo $this->Form->input('usuario_id', array('label'=>'Usuário', 'options' => $users));
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>
