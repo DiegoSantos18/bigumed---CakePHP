@@ -29,6 +29,6 @@
              echo $this->Form->input('status', array('label'=>"Ativo", 'type'=>'checkbox'));
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Salvar')) ?>
+    <?= $this->Form->button(__('<i class="large material-icons">save</i>')) ?>
     <?= $this->Form->end() ?>
 </div>

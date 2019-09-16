@@ -4,12 +4,20 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+
+
+
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Usuários') ?></li>
-        <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
         <li class="heading"><?= __('Médicos') ?></li>
-        <li><?= $this->Html->link(__('Listar Médicos'), ['controller' => 'Medicos', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('list'), ['controller' => 'Medicos', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
@@ -36,9 +44,9 @@
                 <td><?= h($user->status ? __('Ativo') : __('Inativo')) ?></td>
                 <td><?= h($user->dt_modificacao) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $user->usuario_id]) ?>
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->usuario_id]) ?>
-                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->usuario_id], ['confirm' => __('Você tem certeza que você deseja deletar o usuário: {0}?', $user->nome_completo)]) ?>
+                    <?= $this->Html->link('visibility',['action' => 'view', $user->usuario_id], array('class' => 'large material-icons')) ?>
+                    <?= $this->Html->link('edit',['action' => 'edit', $user->usuario_id], array('class' => 'large material-icons')) ?>
+                    <?= $this->Form->postLink(__('delete'), ['action' => 'delete', $user->usuario_id],array('class' => 'large material-icons') ,['confirm' => __('Você tem certeza que você deseja deletar o usuário: {0}?', $user->nome_completo)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -52,6 +60,6 @@
             <?= $this->Paginator->next(__('Próximo') . ' >') ?>
             <?= $this->Paginator->last(__('Último') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de total de {{count}}')]) ?></p>
     </div>
 </div>

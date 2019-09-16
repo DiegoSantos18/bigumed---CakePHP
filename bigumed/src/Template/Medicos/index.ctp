@@ -7,11 +7,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Médicos') ?></li>
-        <li><?= $this->Html->link(__('Novo Médico'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
         <li class="heading"><?= __('Usuários') ?></li>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('list'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
         <li class="heading"><?= __('Prescrições') ?></li>
-        <li><?= $this->Html->link(__('Listar Prescrições'), ['controller' => 'Prescricoes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('list'), ['controller' => 'Prescricoes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
     </ul>
 </nav>
 <div class="medicos index large-9 medium-8 columns content">
@@ -34,9 +34,9 @@
                 <td><?= h($medico->especialidade) ?></td>
                 <td><?= $medico->has('user') ? $this->Html->link($medico->user->nome_completo, ['controller' => 'Users', 'action' => 'view', $medico->user->usuario_id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $medico->medico_id]) ?>
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $medico->medico_id]) ?>
-                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $medico->medico_id], ['confirm' => __('Você tem certeza que deseja deletar o médico: {0}?', $medico->user->nome_completo)]) ?>
+                    <?= $this->Html->link('visibility',['action' => 'view', $medico->medico_id], array('class' => 'large material-icons')) ?>
+                    <?= $this->Html->link('edit',['action' => 'edit', $medico->medico_id], array('class' => 'large material-icons')) ?>
+                    <?= $this->Form->postLink(__('delete'), ['action' => 'delete', $medico->medico_id],array('class' => 'large material-icons') ,['confirm' => __('Você tem certeza que você deseja deletar o médico: {0}?', $medico->user->nome_completo)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -50,6 +50,6 @@
             <?= $this->Paginator->next(__('Próximo') . ' >') ?>
             <?= $this->Paginator->last(__('Último') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de total de {{count}}')]) ?></p>
     </div>
 </div>

@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Usuários') ?></li>
@@ -23,6 +24,6 @@
             echo $this->Form->input('status', array('label'=>"Ativo", 'type'=>'checkbox', 'checked'=>'true'));
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Adicionar')) ?>
+    <?= $this->Form->button(__('<i class="large material-icons">save</i>')) ?>
     <?= $this->Form->end() ?>
 </div>

@@ -13,13 +13,14 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
@@ -37,12 +38,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+                <h1><a href=""><i class="material-icons"><img src='img\bigumedLogoMenu.png'></i></a></h1>
             </li>
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li><?= $this->Html->link(__('Logout'), ['controller' => 'Users', 'action' => 'logout']) ?></li>
+                <?= $this->Html->link(__('exit_to_app'), ['controller' => 'Users', 'action' => 'logout'],array('class' => 'large material-icons','style'=>'color:white;font-size:2em;')) ?>
+            </ul>
+        </div>
+        <div class="top-bar-section">
+            <ul class="right">
+            <!--Arrumar action para ir pro perfil-->
+                <?= $this->Html->link(__('account_circle'), ['controller' => 'Users', 'action' => '#'],array('class' => 'large material-icons','style'=>'color:white;font-size:2em;')) ?>
             </ul>
         </div>
     </nav>
