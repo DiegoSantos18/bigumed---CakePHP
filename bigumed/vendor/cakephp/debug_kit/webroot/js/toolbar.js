@@ -32,8 +32,9 @@ if (elem) {
     }
   };
 
+  /*comentei aqui*/
   var onReady = function() {
-    if (!win.__debugKitId) {
+    /*if (!win.__debugKitId) {
       return;
     }
     var body = doc.body;
@@ -55,6 +56,7 @@ if (elem) {
     bodyOverflow = body.style.overflow;
 
     window.addEventListener('message', onMessage, false);
+  */
   };
 
   var logAjaxRequest = function(original) {

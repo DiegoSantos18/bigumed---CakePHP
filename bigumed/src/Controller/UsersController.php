@@ -41,6 +41,17 @@ class UsersController extends AppController
      
     public function index()
     {
+        /*
+        $keyword = $this->request->query('keyword');
+        
+        if(!empty($keyword))
+        {
+            $this->paginate = [
+                'conditions' => ['nome_completo LIKE'=>'%'.$keyword.'%'] 
+            ];
+        }
+        */
+
         $this->paginate = [
             'contain' => ['Roles']
         ];

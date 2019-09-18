@@ -4,17 +4,23 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Usuários') ?></li>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
+        <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
         <li><?= $this->Form->postLink(
-                __('Deletar Usuário'),
-                ['action' => 'delete', $user->usuario_id],
+                __('delete'),
+                ['action' => 'delete', $user->usuario_id], array('class' => 'large material-icons'),
                 ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?></li>
+        
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">

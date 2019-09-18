@@ -15,24 +15,24 @@
     </ul>
 </nav>
 <div class="medicos index large-9 medium-8 columns content">
-    <h3><?= __('Medicos') ?></h3>
+    <h3><?= __('Médicos') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('medico_id', array('label'=>'Médico')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('cpf', array('label'=>'CPF')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('crm', array('label'=>'CRM')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('nome_completo', array('label'=>'Nome Completo')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('especialidade') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('nome_completo', array('label'=>'Usuário')) ?></th>
                 <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($medicos as $medico): ?>
             <tr>
-                <td><?= $this->Number->format($medico->medico_id) ?></td>
+                <td><?= h($medico->user->cpf) ?></td>
                 <td><?= h($medico->crm) ?></td>
-                <td><?= h($medico->especialidade) ?></td>
                 <td><?= $medico->has('user') ? $this->Html->link($medico->user->nome_completo, ['controller' => 'Users', 'action' => 'view', $medico->user->usuario_id]) : '' ?></td>
+                <td><?= h($medico->especialidade) ?></td>
                 <td class="actions">
                     <?= $this->Html->link('visibility',['action' => 'view', $medico->medico_id], array('class' => 'large material-icons')) ?>
                     <?= $this->Html->link('edit',['action' => 'edit', $medico->medico_id], array('class' => 'large material-icons')) ?>

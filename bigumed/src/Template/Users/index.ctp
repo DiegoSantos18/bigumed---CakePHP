@@ -22,6 +22,12 @@
 </nav>
 <div class="users index large-9 medium-8 columns content">
     <h3><?= __('Usuários') ?></h3>
+    <!-- Pesquisa
+    <?= $this->Form->create("",['type'=>'get']) ?>
+        <?= $this->Form->control('keyword',['default'=>$this->request->query('keyword')]); ?>
+        <button>Pesquisa</button>
+    <?= $this->Form->end() ?>
+    -->
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -30,7 +36,7 @@
                 <th scope="col"><?= $this->Paginator->sort('sexo') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('roles_id', array('label'=>'Papel')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('dt_modificacao', array('label'=>'Modificado')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('dt_modificacao', array('label'=>'Ultima Modificação')) ?></th>
                 <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
@@ -40,7 +46,7 @@
                 <td><?= h($user->cpf) ?></td>
                 <td><?= h($user->nome_completo) ?></td>
                 <td><?= h($user->sexo) ?></td>
-                <td><?= $user->has('role') ? $this->Html->link($user->role->role, ['controller' => 'Roles', 'action' => 'view', $user->role->roles_id]) : '' ?></td>
+                <td><?= h($user->role->role) ?></td>
                 <td><?= h($user->status ? __('Ativo') : __('Inativo')) ?></td>
                 <td><?= h($user->dt_modificacao) ?></td>
                 <td class="actions">

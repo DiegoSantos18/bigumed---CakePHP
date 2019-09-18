@@ -30,11 +30,11 @@ class MedicamentosTable extends Table
     {
         parent::initialize($config);
 
-        $this->addBehavior('Search.Search');
+        $this->addBehavior('Medicamentos');
 
         $this->setTable('medicamentos');
-        $this->setDisplayField('id');
-        $this->setPrimaryKey('id');
+        $this->setDisplayField('medicamentos_id');
+        $this->setPrimaryKey('medicamentos_id');
     }
 
     /**
