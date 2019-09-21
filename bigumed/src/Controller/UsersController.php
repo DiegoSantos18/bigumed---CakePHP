@@ -41,23 +41,23 @@ class UsersController extends AppController
      
     public function index()
     {
-        /*
-        $keyword = $this->request->query('keyword');
         
-        if(!empty($keyword))
-        {
-            $this->paginate = [
-                'conditions' => ['nome_completo LIKE'=>'%'.$keyword.'%'] 
-            ];
-        }
-        */
-
         $this->paginate = [
             'contain' => ['Roles']
         ];
         $users = $this->paginate($this->Users);
+        //Filtro
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            // (debug teste) print_r($this->request->data);
+            $filtro = $this->Users->find()->where(['Users.cpf LIKE'=>'%'.$this->request->data["cpf"].'%',
+            'Users.nome_completo LIKE'=>'%'.$this->request->data["nome_completo"].'%',
+            'Users.roles_id '=>$this->request->data["papel"],
+            'Users.status '=>$this->request->data["status"]]);
+            $users = $this->paginate($filtro);
+        }
 
-        $this->set(compact('users'));
+        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
+        $this->set(compact('users','roles'));
     }
 
     /**

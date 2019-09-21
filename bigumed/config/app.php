@@ -391,5 +391,7 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+        'timeout'=>2160 , //30 min inatividade
+        'Session.cookie_lifetime'  =>  1800 
     ],
 ];

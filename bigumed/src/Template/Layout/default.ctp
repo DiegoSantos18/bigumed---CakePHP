@@ -43,13 +43,9 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <?= $this->Html->link(__('exit_to_app'), ['controller' => 'Users', 'action' => 'logout'],array('class' => 'large material-icons','style'=>'color:white;font-size:2em;')) ?>
-            </ul>
-        </div>
-        <div class="top-bar-section">
-            <ul class="right">
-            <!--Arrumar action para ir pro perfil-->
+                <!--Arrumar action para ir pro perfil-->
                 <?= $this->Html->link(__('account_circle'), ['controller' => 'Users', 'action' => '#'],array('class' => 'large material-icons','style'=>'color:white;font-size:2em;')) ?>
+                <?= $this->Html->link(__('exit_to_app'), ['controller' => 'Users', 'action' => 'logout'],array('class' => 'large material-icons','style'=>'color:white;font-size:2em;')) ?>
             </ul>
         </div>
     </nav>
