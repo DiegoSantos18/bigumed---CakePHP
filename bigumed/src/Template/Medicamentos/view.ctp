@@ -38,6 +38,10 @@
         <?= $this->Text->autoParagraph(h($medicamento->composicao)); ?>
     </div>
     <div class="row">
+        <h4><?= __('Interacoes') ?></h4>
+        <?= $this->Text->autoParagraph(h($medicamento->interacoes)); ?>
+    </div>
+    <div class="row">
         <h4><?= __('Contra Indicacoes') ?></h4>
         <?= $this->Text->autoParagraph(h($medicamento->contra_indicacoes)); ?>
     </div>

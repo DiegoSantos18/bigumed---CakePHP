@@ -33,7 +33,6 @@ class MedicamentosTable extends Table
         $this->setTable('medicamentos');
         $this->setDisplayField('medicamento_id');
         $this->setPrimaryKey('medicamento_id');
-
     }
 
     /**
@@ -67,6 +66,10 @@ class MedicamentosTable extends Table
             ->scalar('composicao')
             ->requirePresence('composicao', 'create')
             ->notEmptyString('composicao');
+
+        $validator
+            ->scalar('interacoes')
+            ->allowEmptyString('interacoes');
 
         $validator
             ->scalar('contra_indicacoes')

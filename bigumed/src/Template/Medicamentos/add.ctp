@@ -19,6 +19,7 @@
             echo $this->Form->control('nome_tecnico');
             echo $this->Form->control('tipo');
             echo $this->Form->control('composicao');
+            echo $this->Form->control('interacoes');
             echo $this->Form->control('contra_indicacoes');
             echo $this->Form->control('indicacao');
             echo $this->Form->control('posologia');

@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property string $nome_tecnico
  * @property string|null $tipo
  * @property string $composicao
+ * @property string|null $interacoes
  * @property string $contra_indicacoes
  * @property string $indicacao
  * @property string $posologia
@@ -31,6 +32,7 @@ class Medicamento extends Entity
         'nome_tecnico' => true,
         'tipo' => true,
         'composicao' => true,
+        'interacoes' => true,
         'contra_indicacoes' => true,
         'indicacao' => true,
         'posologia' => true
