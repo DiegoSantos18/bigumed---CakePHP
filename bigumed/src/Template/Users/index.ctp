@@ -6,6 +6,7 @@
 
 //mensagem bem vindo
 //echo 'Bem-Vindo '.$this->request->session()->read('Auth.User.nome_completo');
+
 ?>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
