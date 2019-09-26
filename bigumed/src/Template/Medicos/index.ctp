@@ -6,37 +6,37 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Medico'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Prescricoes'), ['controller' => 'Prescricoes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Prescrico'), ['controller' => 'Prescricoes', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Médicos') ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
+        <li class="heading"><?= __('Usuários') ?></li>
+        <li><?= $this->Html->link(__('list'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
+        <li class="heading"><?= __('Prescrições') ?></li>
+        <li><?= $this->Html->link(__('list'), ['controller' => 'Prescricoes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
     </ul>
 </nav>
 <div class="medicos index large-9 medium-8 columns content">
-    <h3><?= __('Medicos') ?></h3>
+    <h3><?= __('Médicos') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('medico_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('crm') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('cpf', array('label'=>'CPF')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('crm', array('label'=>'CRM')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('nome_completo', array('label'=>'Nome Completo')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('especialidade') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('usuario_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($medicos as $medico): ?>
             <tr>
-                <td><?= $this->Number->format($medico->medico_id) ?></td>
+                <td><?= h($medico->user->cpf) ?></td>
                 <td><?= h($medico->crm) ?></td>
+                <td><?= $medico->has('user') ? $this->Html->link($medico->user->nome_completo, ['controller' => 'Users', 'action' => 'view', $medico->user->usuario_id]) : '' ?></td>
                 <td><?= h($medico->especialidade) ?></td>
-                <td><?= $medico->has('user') ? $this->Html->link($medico->user->usuario_id, ['controller' => 'Users', 'action' => 'view', $medico->user->usuario_id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $medico->medico_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $medico->medico_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medico->medico_id], ['confirm' => __('Are you sure you want to delete # {0}?', $medico->medico_id)]) ?>
+                    <?= $this->Html->link('visibility',['action' => 'view', $medico->medico_id], array('class' => 'large material-icons')) ?>
+                    <?= $this->Html->link('edit',['action' => 'edit', $medico->medico_id], array('class' => 'large material-icons')) ?>
+                    <?= $this->Form->postLink(__('delete'), ['action' => 'delete', $medico->medico_id],array('class' => 'large material-icons') ,['confirm' => __('Você tem certeza que você deseja deletar o médico: {0}?', $medico->user->nome_completo)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -44,12 +44,12 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->first('<< ' . __('Primeiro')) ?>
+            <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+            <?= $this->Paginator->next(__('Próximo') . ' >') ?>
+            <?= $this->Paginator->last(__('Último') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de total de {{count}}')]) ?></p>
     </div>
 </div>

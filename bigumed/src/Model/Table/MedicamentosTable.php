@@ -33,6 +33,7 @@ class MedicamentosTable extends Table
         $this->setTable('medicamentos');
         $this->setDisplayField('medicamento_id');
         $this->setPrimaryKey('medicamento_id');
+
     }
 
     /**

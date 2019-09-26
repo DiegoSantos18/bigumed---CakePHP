@@ -33,7 +33,7 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('users');
-        $this->setDisplayField('usuario_id');
+        $this->setDisplayField('nome_completo');
         $this->setPrimaryKey('usuario_id');
 
         $this->belongsTo('Roles', [

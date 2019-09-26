@@ -4,18 +4,23 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Funções de Admin') ?></li>
+        <li class="heading"><?= __('Usuários') ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
+        <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
         <li><?= $this->Form->postLink(
-                __('Deletar usuário'),
-                ['action' => 'delete', $user->usuario_id],
-                ['confirm' => __('Você tem certeza que quer deletar usuário: {0}?', $user->nome_completo)]
+                __('delete'),
+                ['action' => 'delete', $user->usuario_id], array('class' => 'large material-icons'),
+                ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Listar nível usuário'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Novo nível usuário'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
+        
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">
@@ -23,18 +28,13 @@
     <fieldset>
         <legend><?= __('Editar Usuário') ?></legend>
         <?php
-             echo $this->Form->control('cpf',['disabled'=>'true']);
-             echo $this->Form->control('senha');
-             echo $this->Form->control('nome_completo');
-             echo $this->Form->control('sexo', ['type' => 'radio', 'options' => [['value' => 'M', 'text' => __('Masculino')],['value' => 'F', 'text' => __('Feminino')]]]);
-             echo $this->Form->control('roles_id', ['options' => $roles]);
-             echo $this->Form->label('[v] para usuário ativo ou [ ] para não ativo');
-             echo "<br>";
-             echo $this->Form->control('status', ['checked' => 'true']);
-             echo $this->Form->control('dt_criacao');
-             echo $this->Form->control('dt_modificacao');
+             echo $this->Form->input('cpf', array('label'=>'CPF','disabled'=>'true'));
+             echo $this->Form->input('nome_completo');
+             echo $this->Form->input('sexo', array('label'=>'Selecione o sexo', 'type'=>'select', 'options'=>array('M'=>'Masculino','F'=>'Feminino')));
+             echo $this->Form->input('roles_id', array('label'=>'Papel', 'type'=>'select', 'options' => $roles));
+             echo $this->Form->input('status', array('label'=>"Ativo", 'type'=>'checkbox'));
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Enviar')) ?>
+    <?= $this->Form->button(__('<i class="large material-icons">save</i>')) ?>
     <?= $this->Form->end() ?>
 </div>

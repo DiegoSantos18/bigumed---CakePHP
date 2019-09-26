@@ -4,12 +4,15 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Funções do Admin') ?></li>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Listar Níveis Usuário'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Novo Nível Usuário'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
+        
+        <li class="heading"><?= __('Usuários') ?></li>
+        <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">
@@ -17,18 +20,14 @@
     <fieldset>
         <legend><?= __('Novo Usuário') ?></legend>
         <?php
-            echo $this->Form->control('cpf');
-            echo $this->Form->control('senha');
-            echo $this->Form->control('nome_completo');
-            echo $this->Form->control('sexo', ['type' => 'radio', 'options' => [['value' => 'M', 'text' => __('Masculino')],['value' => 'F', 'text' => __('Feminino')]]]);
-            echo $this->Form->control('roles_id', ['options' => $roles]);
-            echo $this->Form->label('[v] para usuário ativo ou [ ] para não ativo');
-            echo "<br>";
-            echo $this->Form->control('status', ['checked' => 'true']);
-            echo $this->Form->control('dt_criacao');
-            echo $this->Form->control('dt_modificacao');
+            echo $this->Form->input('cpf', array('label'=>'CPF'));
+            echo $this->Form->input('senha', array('type'=>'password'));
+            echo $this->Form->input('nome_completo');
+            echo $this->Form->input('sexo', array('label'=>'Selecione o sexo', 'type'=>'select','options'=>array('M'=>'Masculino','F'=>'Feminino')));
+            echo $this->Form->input('roles_id', array('label'=>'Papel', 'type'=>'select','required'=>'true', 'options'=>$roles));
+            echo $this->Form->input('status', array('label'=>'selecione o status', 'type'=>'radio', 'options'=>array('1'=>'Ativo','0'=>'Inativo')));
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Enviar')) ?>
+    <?= $this->Form->button(__('<i class="large material-icons">save</i>')) ?>
     <?= $this->Form->end() ?>
 </div>

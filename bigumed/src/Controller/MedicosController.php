@@ -37,7 +37,7 @@ class MedicosController extends AppController
     public function view($id = null)
     {
         $medico = $this->Medicos->get($id, [
-            'contain' => ['Users', 'Prescricoes']
+            'contain' => ['Users']
         ]);
 
         $this->set('medico', $medico);
@@ -54,11 +54,11 @@ class MedicosController extends AppController
         if ($this->request->is('post')) {
             $medico = $this->Medicos->patchEntity($medico, $this->request->getData());
             if ($this->Medicos->save($medico)) {
-                $this->Flash->success(__('The medico has been saved.'));
+                $this->Flash->success(__('Médico salvo com sucesso!'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The medico could not be saved. Please, try again.'));
+            $this->Flash->error(__('Erro ao salvar Médico. Tente novamente!'));
         }
         $users = $this->Medicos->Users->find('list', ['limit' => 200]);
         $this->set(compact('medico', 'users'));
@@ -74,16 +74,16 @@ class MedicosController extends AppController
     public function edit($id = null)
     {
         $medico = $this->Medicos->get($id, [
-            'contain' => []
+            'contain' => ['Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $medico = $this->Medicos->patchEntity($medico, $this->request->getData());
             if ($this->Medicos->save($medico)) {
-                $this->Flash->success(__('The medico has been saved.'));
+                $this->Flash->success(__('Médico atualizado com sucesso!'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The medico could not be saved. Please, try again.'));
+            $this->Flash->error(__('Erro ao atualizar Médico. Tente novamente!'));
         }
         $users = $this->Medicos->Users->find('list', ['limit' => 200]);
         $this->set(compact('medico', 'users'));
@@ -101,9 +101,9 @@ class MedicosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $medico = $this->Medicos->get($id);
         if ($this->Medicos->delete($medico)) {
-            $this->Flash->success(__('The medico has been deleted.'));
+            $this->Flash->success(__('Médico deletado com sucesso!'));
         } else {
-            $this->Flash->error(__('The medico could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Erro ao deletar usuário. Tente novamente!'));
         }
 
         return $this->redirect(['action' => 'index']);

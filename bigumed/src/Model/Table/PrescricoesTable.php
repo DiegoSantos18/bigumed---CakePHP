@@ -34,6 +34,8 @@ class PrescricoesTable extends Table
     {
         parent::initialize($config);
 
+        $this->addBehavior('Prescricoes');
+
         $this->setTable('prescricoes');
         $this->setDisplayField('precricao_id');
         $this->setPrimaryKey('precricao_id');

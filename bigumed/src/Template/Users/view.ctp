@@ -4,22 +4,31 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Funções do Admin') ?></li>
-        <li><?= $this->Html->link(__('Editar Usuário'), ['action' => 'edit', $user->usuario_id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Deletar Usuário'), ['action' => 'delete', $user->usuario_id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->usuario_id)]) ?> </li>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('Listar Níveis Usuário'), ['controller' => 'Roles', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Novo Nível Usuário'), ['controller' => 'Roles', 'action' => 'add']) ?> </li>
+        <li class="heading"><?= __('Usuários') ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
+        <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
+        <li><?= $this->Html->link(__('edit'), ['action' => 'edit', $user->usuario_id], array('class' => 'large material-icons')) ?> </li>
+        <li><?= $this->Form->postLink(
+                __('delete'),
+                ['action' => 'delete', $user->usuario_id], array('class' => 'large material-icons'),
+                ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo)]
+            )
+        ?></li>
+    
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">
     <h3><?= h($user->nome_completo) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Cpf') ?></th>
+            <th scope="row"><?= __('CPF') ?></th>
             <td><?= h($user->cpf) ?></td>
         </tr>
         <tr>
@@ -31,8 +40,8 @@
             <td><?= h($user->sexo) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Role') ?></th>
-            <td><?= $user->has('role') ? $this->Html->link($user->role->role, ['controller' => 'Roles', 'action' => 'view', $user->role->role]) : '' ?></td>
+            <th scope="row"><?= __('Papel') ?></th>
+            <td><?= h($user->role->role) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Status') ?></th>
@@ -45,10 +54,6 @@
         <tr>
             <th scope="row"><?= __('Data Modificação') ?></th>
             <td><?= h($user->dt_modificacao) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Status') ?></th>
-            <td><?= $user->status ? __('Ativo') : __('Desativado'); ?></td>
         </tr>
     </table>
 </div>
