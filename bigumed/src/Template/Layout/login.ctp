@@ -19,8 +19,12 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
 <html>
 <head>
     <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet" />
     <title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
@@ -29,6 +33,8 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->css('materialize.min.css') ?>
+    <?= $this->Html->css('login.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -41,5 +47,8 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
     </div>
     <footer>
     </footer>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

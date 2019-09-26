@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Users Controller
@@ -18,30 +20,45 @@ class UsersController extends AppController
      * @return \Cake\Http\Response|null
      */
 
+    public function initialize()
+    {
+        parent::initialize();
+        //debug($this->request->session()->read('Auth.User'));
+        //$this->isAuthorized($this->request->session()->read('Auth.User'));
+        $this->Auth->allow(['login']);
+    }
+
+    public function isAuthorized($user)
+    {
+        if ($this->request->getParam('action') === 'login') {
+            return true;
+        }
+
+        return parent::isAuthorized($user);
+    }
 
     public function login()
     {
         $this->viewBuilder()->setLayout('login');
-        if($this->request->is(['post']))
-        {
+        if ($this->request->is(['post'])) {
             $user = $this->Auth->identify();
-            //debug($user);
-            if($user){
+            if ($user) {
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Usuário ou senha inválidos!'));
-            
         }
     }
+
     public function logout()
     {
+        $this->Flash->success('Você foi deslogado!');
         return $this->redirect($this->Auth->logout());
     }
-     
+
     public function index()
     {
-        
+
         $this->paginate = [
             'contain' => ['Roles']
         ];
@@ -49,15 +66,17 @@ class UsersController extends AppController
         //Filtro
         if ($this->request->is(['patch', 'post', 'put'])) {
             // (debug teste) print_r($this->request->data);
-            $filtro = $this->Users->find()->where(['Users.cpf LIKE'=>'%'.$this->request->data["cpf"].'%',
-            'Users.nome_completo LIKE'=>'%'.$this->request->data["nome_completo"].'%',
-            'Users.roles_id '=>$this->request->data["papel"],
-            'Users.status '=>$this->request->data["status"]]);
+            $filtro = $this->Users->find()->where([
+                'Users.cpf LIKE' => '%' . $this->request->data["cpf"] . '%',
+                'Users.nome_completo LIKE' => '%' . $this->request->data["nome_completo"] . '%',
+                'Users.roles_id ' => $this->request->data["papel"],
+                'Users.status ' => $this->request->data["status"]
+            ]);
             $users = $this->paginate($filtro);
         }
 
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
-        $this->set(compact('users','roles'));
+        $this->set(compact('users', 'roles'));
     }
 
     /**
