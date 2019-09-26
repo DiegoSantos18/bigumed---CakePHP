@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `medicamentos` (
-  `medicamentos_id` int(11) UNSIGNED NOT NULL,
+  `medicamento_id` int(11) UNSIGNED NOT NULL,
   `nome_popular` varchar(50) DEFAULT NULL,
   `nome_tecnico` varchar(50) NOT NULL,
   `tipo` text,
