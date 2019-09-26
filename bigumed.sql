@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `medicamentos` (
-  `medicamentos_id` int(11) UNSIGNED NOT NULL,
+  `medicamento_id` int(11) UNSIGNED NOT NULL,
   `nome_popular` varchar(50) DEFAULT NULL,
   `nome_tecnico` varchar(50) NOT NULL,
   `tipo` text,
@@ -94,7 +94,7 @@ CREATE TABLE `prescricoes` (
   `dt_prescricao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `medico_id` int(10) UNSIGNED NOT NULL,
   `paciente_id` int(10) UNSIGNED NOT NULL,
-  `medicamentos_id` int(10) UNSIGNED NOT NULL
+  `medicamento_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -154,7 +154,7 @@ INSERT INTO `users` (`usuario_id`, `cpf`, `senha`, `nome_completo`, `sexo`, `rol
 -- Indexes for table `medicamentos`
 --
 ALTER TABLE `medicamentos`
-  ADD PRIMARY KEY (`medicamentos_id`);
+  ADD PRIMARY KEY (`medicamento_id`);
 
 --
 -- Indexes for table `medicos`
@@ -179,7 +179,7 @@ ALTER TABLE `prescricoes`
   ADD PRIMARY KEY (`precricao_id`),
   ADD KEY `med_pres_ibfk_1` (`medico_id`),
   ADD KEY `pac_pres_ibfk_1` (`paciente_id`),
-  ADD KEY `medicamento_pres_ibfk_1` (`medicamentos_id`);
+  ADD KEY `medicamento_pres_ibfk_1` (`medicamento_id`);
 
 --
 -- Indexes for table `roles`
@@ -203,7 +203,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `medicamentos`
 --
 ALTER TABLE `medicamentos`
-  MODIFY `medicamentos_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `medicamento_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `medicos`
@@ -250,7 +250,7 @@ ALTER TABLE `pacientes`
 --
 ALTER TABLE `prescricoes`
   ADD CONSTRAINT `med_pres_ibfk_1` FOREIGN KEY (`medico_id`) REFERENCES `medicos` (`medico_id`),
-  ADD CONSTRAINT `medicamento_pres_ibfk_1` FOREIGN KEY (`medicamentos_id`) REFERENCES `medicamentos` (`medicamentos_id`),
+  ADD CONSTRAINT `medicamento_pres_ibfk_1` FOREIGN KEY (`medicamento_id`) REFERENCES `medicamentos` (`medicamento_id`),
   ADD CONSTRAINT `pac_pres_ibfk_1` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`paciente_id`);
 
 --
@@ -259,6 +259,8 @@ ALTER TABLE `prescricoes`
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`roles_id`);
 COMMIT;
+
+ALTER TABLE `medicamentos`  ADD `interacoes` TEXT NULL  AFTER `composicao`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
