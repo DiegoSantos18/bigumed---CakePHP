@@ -8,8 +8,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Medicamento'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Prescricoes'), ['controller' => 'Prescricoes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Prescrico'), ['controller' => 'Prescricoes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="medicamentos index large-9 medium-8 columns content">
@@ -17,7 +15,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('medicamentos_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('medicamento_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nome_popular') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nome_tecnico') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -26,13 +24,13 @@
         <tbody>
             <?php foreach ($medicamentos as $medicamento): ?>
             <tr>
-                <td><?= $this->Number->format($medicamento->medicamentos_id) ?></td>
+                <td><?= $this->Number->format($medicamento->medicamento_id) ?></td>
                 <td><?= h($medicamento->nome_popular) ?></td>
                 <td><?= h($medicamento->nome_tecnico) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $medicamento->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $medicamento->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medicamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $medicamento->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $medicamento->medicamento_id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $medicamento->medicamento_id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medicamento->medicamento_id], ['confirm' => __('Are you sure you want to delete # {0}?', $medicamento->medicamento_id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

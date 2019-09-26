@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `medicamentos` (
-  `medicamentos_id` int(11) UNSIGNED NOT NULL,
+  `medicamento_id` int(11) UNSIGNED NOT NULL,
   `nome_popular` varchar(50) DEFAULT NULL,
   `nome_tecnico` varchar(50) NOT NULL,
   `tipo` text,
@@ -259,6 +259,8 @@ ALTER TABLE `prescricoes`
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`roles_id`);
 COMMIT;
+
+ALTER TABLE `medicamentos`  ADD `interacoes` TEXT NULL  AFTER `composicao`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
