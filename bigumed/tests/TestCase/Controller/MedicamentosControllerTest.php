@@ -20,8 +20,7 @@ class MedicamentosControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Medicamentos',
-        'app.Prescricoes'
+        'app.Medicamentos'
     ];
 
     /**

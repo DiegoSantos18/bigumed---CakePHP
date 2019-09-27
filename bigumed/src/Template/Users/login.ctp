@@ -5,14 +5,13 @@
  */
 ?>
 
-<body class="homeLogin">    
 <div class="materialContainer">
     <div class="box">
         <?= $this->Form->create() ?>
             <form>
                 <fieldset>
                     <legend><?= __('Login',['class'=>'title']) ?></legend>
-                    <img src="img/bigumedLogoMenu.png">
+                    <img id="imgLogoMenu"/>
                     <?php
                         echo "<div class='input'>"; 
                         echo $this->Form->control('cpf',['id'=>'username' ,'type'=>'text', 'clas'=>'validate','autofocus'=>'true']);
@@ -62,12 +61,3 @@
         <?= $this->Form->end() ?>
     </div>
 </div>
-             
-          
-            
-                
-                
-              
-            
-
-      

@@ -99,9 +99,9 @@
                 <td><?= h($medicamento->nome_popular) ?></td>
                 <td><?= h($medicamento->nome_tecnico) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $medicamento->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $medicamento->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medicamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $medicamento->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $medicamento->medicamento_id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $medicamento->medicamento_id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medicamento->medicamento_id], ['confirm' => __('Are you sure you want to delete # {0}?', $medicamento->medicamento_id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -364,10 +364,12 @@
  }
  
  body {
-    background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
-    background-position: center;
-    background-size: cover;
+    background-image:url('../img/fundoLogin.gif');
     background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center;
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
  }
@@ -375,6 +377,10 @@
  body,
  html {
     overflow: hidden;
+ }
+
+ #imgLogoMenu{
+   content:url("../img/bigumedLogoMenu.png");
  }
  
  .materialContainer {

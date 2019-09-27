@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -40,12 +42,15 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
-        $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        //$this->loadComponent('Auth');
 
         $this->loadComponent('Auth', [
+            'authorize'=> 'Controller',
+            'authError' => __d('cake', 'Ops! Você não está autorizado a ver está página.'),
+            'loginRedirect' => [
+                'controller' => 'Users',
+                'action' => 'index'
+            ],
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -54,25 +59,25 @@ class AppController extends Controller
                     ]
                 ]
             ],
-            'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index'
-            ],
-            'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index'
-            ]
+            'storage' => 'Session'
         ]);
         //------------------------------------
-    
-        $this->Auth->allow(['display', 'view', 'index']);
     }
 
     public function beforeFilter(Event $event)
     {
         //aqui mexi
-        $this->Auth->allow();
-        $this->viewBuilder()->setLayout('default');
+        //$this->Auth->allow(['index', 'view', 'display']);
     }
-  
+
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['roles_id']) && $user['roles_id'] === 6) {
+            return true;
+        }
+
+        // Default deny
+        return false;
+    }
 }
