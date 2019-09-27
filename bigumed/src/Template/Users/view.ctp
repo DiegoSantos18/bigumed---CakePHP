@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
@@ -17,11 +18,10 @@
         <li><?= $this->Html->link(__('edit'), ['action' => 'edit', $user->usuario_id], array('class' => 'large material-icons')) ?> </li>
         <li><?= $this->Form->postLink(
                 __('delete'),
-                ['action' => 'delete', $user->usuario_id], array('class' => 'large material-icons'),
-                ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo)]
-            )
-        ?></li>
-    
+                ['action' => 'delete', $user->usuario_id],
+                ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo), 'class' => 'large material-icons']
+            ) ?>
+        </li>
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">

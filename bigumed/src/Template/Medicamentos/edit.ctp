@@ -1,36 +1,43 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Medicamento $medicamento
  */
 ?>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Medicamentos') ?></li>
+        <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
+        <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('delete'),
                 ['action' => 'delete', $medicamento->medicamento_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $medicamento->medicamento_id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Medicamentos'), ['action' => 'index']) ?></li>
+                ['confirm' => __('Você tem certeza que deseja deletar o medicamento: {0}?', $medicamento->nome_popular), 'class' => 'large material-icons']
+            ) ?>
+        </li>
     </ul>
 </nav>
 <div class="medicamentos form large-9 medium-8 columns content">
     <?= $this->Form->create($medicamento) ?>
     <fieldset>
-        <legend><?= __('Edit Medicamento') ?></legend>
+        <legend><?= __('Editar Medicamentos') ?></legend>
         <?php
-            echo $this->Form->control('nome_popular');
-            echo $this->Form->control('nome_tecnico');
-            echo $this->Form->control('tipo');
-            echo $this->Form->control('composicao');
-            echo $this->Form->control('interacoes');
-            echo $this->Form->control('contra_indicacoes');
-            echo $this->Form->control('indicacao');
-            echo $this->Form->control('posologia');
+        echo $this->Form->input('nome_popular', array('label' => 'Nome Popular'));
+        echo $this->Form->input('nome_tecnico', array('label' => 'Nome Técnico'));
+        echo $this->Form->input('tipo', array('label' => 'Tipo'));
+        echo $this->Form->input('composicao', array('label' => 'Composição'));
+        echo $this->Form->input('interacoes', array('label' => 'Interações'));
+        echo $this->Form->input('contra_indicacoes', array('label' => 'Contra Indicações'));
+        echo $this->Form->input('indicacao', array('label' => 'Indicação'));
+        echo $this->Form->input('posologia', array('label' => 'Posologia'));
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('<i class="large material-icons">save</i>')) ?>
     <?= $this->Form->end() ?>
 </div>
