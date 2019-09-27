@@ -10,9 +10,10 @@ use Cake\ORM\Entity;
  * @property string $rg
  * @property string $numero_convenio
  * @property int $usuario_id
+ * @property \Cake\I18n\FrozenDate|null $data_nascimento
+ * @property bool|null $status_gravida
  *
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Prescrico[] $prescricoes
  */
 class Paciente extends Entity
 {
@@ -29,7 +30,8 @@ class Paciente extends Entity
         'rg' => true,
         'numero_convenio' => true,
         'usuario_id' => true,
-        'user' => true,
-        'prescricoes' => true
+        'data_nascimento' => true,
+        'status_gravida' => true,
+        'user' => true
     ];
 }

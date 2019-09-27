@@ -66,6 +66,14 @@ class PacientesTable extends Table
             ->requirePresence('numero_convenio', 'create')
             ->notEmptyString('numero_convenio');
 
+        $validator
+            ->date('data_nascimento')
+            ->allowEmptyDate('data_nascimento');
+
+        $validator
+            ->boolean('status_gravida')
+            ->allowEmptyString('status_gravida');
+
         return $validator;
     }
 

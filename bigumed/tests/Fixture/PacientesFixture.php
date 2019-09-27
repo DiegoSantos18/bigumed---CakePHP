@@ -19,6 +19,8 @@ class PacientesFixture extends TestFixture
         'rg' => ['type' => 'string', 'length' => 25, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'numero_convenio' => ['type' => 'string', 'length' => 30, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'usuario_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'data_nascimento' => ['type' => 'date', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
+        'status_gravida' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_indexes' => [
             'usuario_id' => ['type' => 'index', 'columns' => ['usuario_id'], 'length' => []],
         ],
@@ -45,7 +47,9 @@ class PacientesFixture extends TestFixture
                 'paciente_id' => 1,
                 'rg' => 'Lorem ipsum dolor sit a',
                 'numero_convenio' => 'Lorem ipsum dolor sit amet',
-                'usuario_id' => 1
+                'usuario_id' => 1,
+                'data_nascimento' => '2019-09-26',
+                'status_gravida' => 1
             ],
         ];
         parent::init();

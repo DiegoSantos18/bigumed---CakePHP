@@ -24,6 +24,16 @@ class PacientesController extends AppController
         ];
         $pacientes = $this->paginate($this->Pacientes);
 
+        //Filtro
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            // (debug teste) print_r($this->request->data);
+            $filtro = $this->Pacientes->find()->where(['Pacientes.rg LIKE'=>'%'.$this->request->data["rg"].'%',
+            'Pacientes.numero_convenio LIKE'=>'%'.$this->request->data["numero_convenio"].'%',
+            'Users.nome_completo LIKE'=>'%'.$this->request->data["nome_completo"].'%',
+            'Pacientes.status_gravida '=>$this->request->data["status_gravida"]]);
+            $pacientes = $this->paginate($filtro);
+        }
+        
         $this->set(compact('pacientes'));
     }
 
@@ -37,7 +47,7 @@ class PacientesController extends AppController
     public function view($id = null)
     {
         $paciente = $this->Pacientes->get($id, [
-            'contain' => ['Users', 'Prescricoes']
+            'contain' => ['Users']
         ]);
 
         $this->set('paciente', $paciente);

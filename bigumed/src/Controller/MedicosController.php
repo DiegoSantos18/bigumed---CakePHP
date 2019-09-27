@@ -24,6 +24,17 @@ class MedicosController extends AppController
         ];
         $medicos = $this->paginate($this->Medicos);
 
+        //Filtro
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            // (debug teste) print_r($this->request->data);
+            $filtro = $this->Medicos->find()->where(['Users.cpf LIKE'=>'%'.$this->request->data["cpf"].'%',
+            'Medicos.crm LIKE'=>'%'.$this->request->data["crm"].'%',
+            'Users.nome_completo LIKE'=>'%'.$this->request->data["nome_completo"].'%',
+            'Medicos.especialidade '=>$this->request->data["especialidade"]]);
+            $medicos = $this->paginate($filtro);
+        }
+        
+
         $this->set(compact('medicos'));
     }
 
