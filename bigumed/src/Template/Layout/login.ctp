@@ -15,8 +15,7 @@
 
 $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
 ?>
-<!DOCTYPE html>
-<html>
+
 <head>
     <?= $this->Html->charset() ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -40,12 +39,13 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
+
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
     <footer>
+    
     </footer>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

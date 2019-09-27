@@ -7,15 +7,10 @@
 
 //mensagem bem vindo
 //echo 'Bem-Vindo '.$this->request->session()->read('Auth.User.nome_completo');
-?>
 
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-</head>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+?>
+<!--Menu lateral-->
+<nav class="large-3 medium-4 columns" id="actions-sidebar" style="background-color:#ADD8E6;">
     <br>
     <a href="#" data-activates="slide-out" class="waves-effect waves-light btn-large button-collapse">MENU<i class="material-icons">menu</i></a>
     <ul id="slide-out" class="side-nav" style="list-style-type: none;">
@@ -25,7 +20,7 @@
                     <a class="collapsible-header"><?= __('Usuários ') ?><i class="fas fa-user fa-lg"></i></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Users','action' => 'add'], array('class' => 'large material-icons')) ?></li>
                             <li><?= $this->Html->link(__('list'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
@@ -34,8 +29,35 @@
                     <a class="collapsible-header"><?= __('Médicos ') ?><i class="fa fa-user-md fa-lg"></i></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?> </li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Medicos', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
                             <li><?= $this->Html->link(__('list'), ['controller' => 'Medicos', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="collapsible-header"><?= __('Pacientes ') ?><i class="fas fa-user-injured fa-lg"></i></a>
+                    <div class="collapsible-body">
+                        <ul style="list-style-type: none;">
+                        <li><?= $this->Html->link(__('add'), ['controller' => 'Pacientes','action' => 'add'], array('class' => 'large material-icons')) ?></li>
+                        <li><?= $this->Html->link(__('list'), ['controller' => 'Pacientes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="collapsible-header"><?= __('Medicamentos ') ?><i class="fas fa-pills fa-lg"></i></a>
+                    <div class="collapsible-body">
+                        <ul style="list-style-type: none;">
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Medicamentos','action' => 'add'], array('class' => 'large material-icons')) ?> </li>
+                            <li><?= $this->Html->link(__('list'), ['controller' => 'Medicamentos', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="collapsible-header"><?= __('Prescrições ') ?><i class="fas fa-file-medical-alt fa-lg"></i></a>
+                    <div class="collapsible-body">
+                        <ul style="list-style-type: none;">
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Prescricoes','action' => 'add'], array('class' => 'large material-icons')) ?> </li>
+                            <li><?= $this->Html->link(__('list'), ['controller' => 'Prescricoes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
                 </li>
@@ -43,13 +65,17 @@
         </li>
     </ul>
     <script>
-        $(".button-collapse").sideNav();
+    //script abre e fecha menu
+    $(".button-collapse").sideNav();
     </script>
 </nav>
+<!--Fim Menu lateral-->
 
-<div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Usuários') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<!-- Container Principal Conteúdo-->
+<div class="users index large-9 medium-8 columns content homePage">
+    <h3><?= __('Usuários') ?></h3>    
+    <!-- Tabela com Dados-->
+    <table cellpadding="0" cellspacing="0" style="opacity: 0.97;background: transparent;">
         <tbody>
             <!--Form filtro-->
             <tr>
@@ -94,6 +120,8 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <!-- Fim Tabela com Dados-->
+    <!-- Paginação tela-->
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('Primeiro')) ?>
@@ -104,4 +132,6 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de total de {{count}}')]) ?></p>
     </div>
+    <!-- Fim Paginação tela-->
 </div>
+<!-- Fim Container Principal Conteúdo-->
