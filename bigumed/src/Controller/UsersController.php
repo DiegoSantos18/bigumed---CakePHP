@@ -25,7 +25,7 @@ class UsersController extends AppController
         parent::initialize();
         //debug($this->request->session()->read('Auth.User'));
         //$this->isAuthorized($this->request->session()->read('Auth.User'));
-        $this->Auth->allow(['login']);
+        $this->Auth->allow(['login', 'add']);
     }
 
     public function isAuthorized($user)
