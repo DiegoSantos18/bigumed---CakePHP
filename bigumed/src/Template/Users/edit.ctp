@@ -19,7 +19,12 @@
                         <ul style="list-style-type: none;">
                             <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
                             <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
-                            <li><?= $this->Form->postLink(__('delete'),['action' => 'delete', $user->usuario_id], array('class' => 'large material-icons'),['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo)])?></li>
+                            <li><?= $this->Form->postLink(
+                                    __('delete'),
+                                    ['action' => 'delete', $user->usuario_id],
+                                    ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo), 'class' => 'large material-icons']
+                                ) ?>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -27,8 +32,8 @@
         </li>
     </ul>
     <script>
-    //script abre e fecha menu    
-    $(".button-collapse").sideNav();
+        //script abre e fecha menu    
+        $(".button-collapse").sideNav();
     </script>
 </nav>
 <!--Fim Menu lateral-->
@@ -39,11 +44,11 @@
     <fieldset>
         <legend><?= __('Editar Usuário') ?></legend>
         <?php
-             echo $this->Form->input('cpf', array('label'=>'CPF','disabled'=>'true'));
-             echo $this->Form->input('nome_completo');
-             echo $this->Form->input('sexo', array('label'=>'Selecione o Sexo', 'type'=>'select', 'options'=>array('M'=>'Masculino','F'=>'Feminino')));
-             echo $this->Form->input('roles_id', array('label'=>'Papel', 'type'=>'select', 'options' => $roles));
-             echo $this->Form->input('status', array('label'=>'Selecione o Status', 'type'=>'radio', 'options'=>array('1'=>'Ativo','0'=>'Inativo')));
+        echo $this->Form->input('cpf', array('label' => 'CPF', 'disabled' => 'true'));
+        echo $this->Form->input('nome_completo');
+        echo $this->Form->input('sexo', array('label' => 'Selecione o Sexo', 'type' => 'select', 'options' => array('M' => 'Masculino', 'F' => 'Feminino')));
+        echo $this->Form->input('roles_id', array('label' => 'Papel', 'type' => 'select', 'options' => $roles));
+        echo $this->Form->input('status', array('label' => 'Selecione o Status', 'type' => 'radio', 'options' => array('1' => 'Ativo', '0' => 'Inativo')));
         ?>
     </fieldset>
     <?= $this->Form->button(__('<i class="large material-icons">save</i>')) ?>

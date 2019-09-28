@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Medico $medico
@@ -15,7 +16,12 @@
         <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?> </li>
         <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
         <li><?= $this->Html->link(__('edit'), ['action' => 'edit', $medico->medico_id], array('class' => 'large material-icons')) ?> </li>
-        <li><?= $this->Form->postLink(__('delete'), ['action' => 'delete', $medico->medico_id], array('class' => 'large material-icons'), ['confirm' => __('Você tem certeza que deseja deletar o médico: {0}?', $medico->user->nome_completo)]) ?> </li>
+        <li><?= $this->Form->postLink(
+                __('delete'),
+                ['action' => 'delete', $medico->medico_id],
+                ['confirm' => __('Você tem certeza que deseja deletar o médico: {0}?', $medico->user->nome_completo), 'class' => 'large material-icons']
+            ) ?>
+        </li>
     </ul>
 </nav>
 <div class="medicos view large-9 medium-8 columns content">

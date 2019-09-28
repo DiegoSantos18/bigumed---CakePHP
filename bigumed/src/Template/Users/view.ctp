@@ -20,7 +20,12 @@
                             <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?></li>
                             <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?></li>
                             <li><?= $this->Html->link(__('edit'), ['action' => 'edit', $user->usuario_id], array('class' => 'large material-icons')) ?> </li>
-                            <li><?= $this->Form->postLink(__('delete'),['action' => 'delete', $user->usuario_id], array('class' => 'large material-icons'),['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo)])?></li>
+                            <li><?= $this->Form->postLink(
+                                    __('delete'),
+                                    ['action' => 'delete', $user->usuario_id],
+                                    ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo), 'class' => 'large material-icons']
+                                ) ?>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -28,8 +33,8 @@
         </li>
     </ul>
     <script>
-    //script abre e fecha menu
-    $(".button-collapse").sideNav();
+        //script abre e fecha menu
+        $(".button-collapse").sideNav();
     </script>
 </nav>
 <!--Fim Menu lateral-->
