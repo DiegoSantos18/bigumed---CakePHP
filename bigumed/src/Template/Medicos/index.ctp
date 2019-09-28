@@ -68,7 +68,7 @@
 
 
 <!-- Container Principal Conteúdo-->
-<div class="medicos index large-9 medium-8 columns content homePage">
+<div class="medicos index large-9 medium-8 columns content">
     <h3><?= __('Médicos') ?></h3>
     <!-- Tabela com Dados-->
     <table cellpadding="0" cellspacing="0" style="opacity: 0.97;background: transparent;">

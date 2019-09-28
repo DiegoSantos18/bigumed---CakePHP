@@ -31,8 +31,8 @@ class MedicamentosTable extends Table
         parent::initialize($config);
 
         $this->setTable('medicamentos');
-        $this->setDisplayField('medicamento_id');
-        $this->setPrimaryKey('medicamento_id');
+        $this->setDisplayField('medicamentos_id');
+        $this->setPrimaryKey('medicamentos_id');
     }
 
     /**
@@ -44,8 +44,8 @@ class MedicamentosTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->nonNegativeInteger('medicamento_id')
-            ->allowEmptyString('medicamento_id', null, 'create');
+            ->nonNegativeInteger('medicamentos_id')
+            ->allowEmptyString('medicamentos_id', null, 'create');
 
         $validator
             ->scalar('nome_popular')

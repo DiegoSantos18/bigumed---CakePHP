@@ -69,7 +69,7 @@
 
 
 <!-- Container Principal Conteúdo-->
-<div class="medicamentos index large-9 medium-8 columns content homePage">
+<div class="medicamentos index large-9 medium-8 columns content">
     <h3><?= __('Medicamentos') ?></h3>
     <!-- Tabela com Dados-->
     <table cellpadding="0" cellspacing="0" style="opacity: 0.97;background: transparent;">
@@ -79,6 +79,7 @@
                 <?= $this->Form->create() ?>
                 <td><?= $this->Form->input('nome_popular', array('label'=>'','name'=>'nome_popular')) ?></td>
                 <td><?= $this->Form->input('nome_tecnico', array('label'=>'','name'=>'nome_tecnico')) ?></td>
+                <td><?= $this->Form->input('composicao', array('label'=>'','name'=>'composicao')) ?></td>
                 <td class="actions">
                     <input type="submit"  value="search" class="large material-icons filtro"/>
                     <input type="reset"  value="format_clear" class="large material-icons filtro"/>
@@ -91,6 +92,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('nome_popular') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nome_tecnico', array('label' => 'Nome Técnico')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('composicao', array('label' => 'Composição')) ?></th>
                 <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
@@ -99,6 +101,7 @@
             <tr>
                 <td><?= h($medicamento->nome_popular) ?></td>
                 <td><?= h($medicamento->nome_tecnico) ?></td>
+                <td><?= h($medicamento->composicao) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $medicamento->medicamento_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $medicamento->medicamento_id]) ?>

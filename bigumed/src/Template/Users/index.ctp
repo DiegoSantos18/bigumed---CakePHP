@@ -72,7 +72,7 @@
 <!--Fim Menu lateral-->
 
 <!-- Container Principal Conteúdo-->
-<div class="users index large-9 medium-8 columns content homePage">
+<div class="users index large-9 medium-8 columns content">
     <h3><?= __('Usuários') ?></h3>    
     <!-- Tabela com Dados-->
     <table cellpadding="0" cellspacing="0" style="opacity: 0.97;background: transparent;">

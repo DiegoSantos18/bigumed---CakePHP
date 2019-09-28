@@ -20,6 +20,14 @@ class MedicamentosController extends AppController
     public function index()
     {
         $medicamentos = $this->paginate($this->Medicamentos);
+        //Filtro
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            // (debug teste) print_r($this->request->data);
+            $filtro = $this->Medicamentos->find()->where(['Medicamentos.nome_popular LIKE'=>'%'.$this->request->data["nome_popular"].'%',
+            'Medicamentos.nome_tecnico LIKE'=>'%'.$this->request->data["nome_tecnico"].'%',
+            'Medicamentos.composicao LIKE'=>'%'.$this->request->data["composicao"].'%']);
+            $medicamentos = $this->paginate($filtro);
+        }
 
         $this->set(compact('medicamentos'));
     }

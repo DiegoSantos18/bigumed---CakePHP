@@ -15,10 +15,10 @@
         <li class="heading"><?= __('Medicamentos') ?></li>
         <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?> </li>
         <li><?= $this->Html->link(__('list'), ['action' => 'index'], array('class' => 'large material-icons')) ?> </li>
-        <li><?= $this->Html->link(__('edit'), ['action' => 'edit', $medicamento->medicamento_id], array('class' => 'large material-icons')) ?> </li>
+        <li><?= $this->Html->link(__('edit'), ['action' => 'edit', $medicamento->medicamentos_id], array('class' => 'large material-icons')) ?> </li>
         <li><?= $this->Form->postLink(
                 __('delete'),
-                ['action' => 'delete', $medicamento->medicamento_id],
+                ['action' => 'delete', $medicamento->medicamentos_id],
                 ['confirm' => __('Você tem certeza que deseja deletar o medicamento: {0}?', $medicamento->nome_popular), 'class' => 'large material-icons']
             ) ?>
         </li>

@@ -55,7 +55,7 @@ class PrescricoesFixture extends TestFixture
                 'quantidade' => 1,
                 'duracao' => 'Lorem ipsum dolor sit amet',
                 'observacao' => 'Lorem ipsum dolor sit amet',
-                'dt_prescricao' => 1568351903,
+                'dt_prescricao' => 1569630664,
                 'medico_id' => 1,
                 'paciente_id' => 1,
                 'medicamentos_id' => 1

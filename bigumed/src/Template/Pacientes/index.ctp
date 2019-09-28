@@ -67,7 +67,7 @@
 <!--Fim Menu lateral-->
 
 <!-- Container Principal Conteúdo-->
-<div class="pacientes index large-9 medium-8 columns content homePage">
+<div class="pacientes index large-9 medium-8 columns content">
     <h3><?= __('Pacientes') ?></h3>
     <!-- Tabela com Dados-->
     <table cellpadding="0" cellspacing="0"  style="opacity: 0.97;background: transparent;">
@@ -75,6 +75,7 @@
             <!--Form filtro-->
             <tr>
                 <?= $this->Form->create() ?>
+                <td><?= $this->Form->input('cpf', array('label'=>'','name'=>'cpf')) ?></td>
                 <td><?= $this->Form->input('rg', array('label'=>'','name'=>'rg')) ?></td>
                 <td><?= $this->Form->input('numero_convenio', array('label'=>'','name'=>'numero_convenio')) ?></td>
                 <td><?= $this->Form->input('nome_completo', array('label'=>'','name'=>'nome_completo')) ?></td>
@@ -90,6 +91,7 @@
         </tbody>    
         <thead>
             <tr>
+                <th scope="col"><?= $this->Paginator->sort('cpf', array('name'=>'cpf')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('rg', array('name'=>'rg')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('numero_convenio', array('name'=>'numero_convenio')) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nome_completo', array('name'=>'nome_completo')) ?></th>
@@ -101,6 +103,7 @@
         <tbody>
             <?php foreach ($pacientes as $paciente): ?>
             <tr>
+                <td><?= h($paciente->user->cpf) ?></td>
                 <td><?= h($paciente->rg) ?></td>
                 <td><?= h($paciente->numero_convenio) ?></td>
                 <td><?= $paciente->has('user') ? $this->Html->link($paciente->user->nome_completo, ['controller' => 'Users', 'action' => 'view', $paciente->user->usuario_id]) : '' ?></td>

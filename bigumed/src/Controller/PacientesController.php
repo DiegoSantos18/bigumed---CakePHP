@@ -27,7 +27,8 @@ class PacientesController extends AppController
         //Filtro
         if ($this->request->is(['patch', 'post', 'put'])) {
             // (debug teste) print_r($this->request->data);
-            $filtro = $this->Pacientes->find()->where(['Pacientes.rg LIKE'=>'%'.$this->request->data["rg"].'%',
+            $filtro = $this->Pacientes->find()->where(['Users.cpf LIKE'=>'%'.$this->request->data["cpf"].'%',
+            'Pacientes.rg LIKE'=>'%'.$this->request->data["rg"].'%',
             'Pacientes.numero_convenio LIKE'=>'%'.$this->request->data["numero_convenio"].'%',
             'Users.nome_completo LIKE'=>'%'.$this->request->data["nome_completo"].'%',
             'Pacientes.status_gravida '=>$this->request->data["status_gravida"]]);

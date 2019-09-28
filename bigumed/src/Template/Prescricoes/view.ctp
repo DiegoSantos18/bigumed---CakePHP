@@ -43,16 +43,16 @@
             <td><?= $prescrico->has('paciente') ? $this->Html->link($prescrico->paciente->paciente_id, ['controller' => 'Pacientes', 'action' => 'view', $prescrico->paciente->paciente_id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Medicamento') ?></th>
+            <td><?= $prescrico->has('medicamento') ? $this->Html->link($prescrico->medicamento->medicamento_id, ['controller' => 'Medicamentos', 'action' => 'view', $prescrico->medicamento->medicamento_id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Precricao Id') ?></th>
             <td><?= $this->Number->format($prescrico->precricao_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Quantidade') ?></th>
             <td><?= $this->Number->format($prescrico->quantidade) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Medicamentos Id') ?></th>
-            <td><?= $this->Number->format($prescrico->medicamentos_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Dt Prescricao') ?></th>
