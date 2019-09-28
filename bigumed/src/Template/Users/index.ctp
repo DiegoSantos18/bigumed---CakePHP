@@ -20,7 +20,7 @@
                     <a class="collapsible-header"><?= __('Usuários ') ?><i class="fas fa-user fa-lg"></i></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Users','action' => 'add'], array('class' => 'large material-icons')) ?></li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Users', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
                             <li><?= $this->Html->link(__('list'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
@@ -38,8 +38,8 @@
                     <a class="collapsible-header"><?= __('Pacientes ') ?><i class="fas fa-user-injured fa-lg"></i></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                        <li><?= $this->Html->link(__('add'), ['controller' => 'Pacientes','action' => 'add'], array('class' => 'large material-icons')) ?></li>
-                        <li><?= $this->Html->link(__('list'), ['controller' => 'Pacientes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Pacientes', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
+                            <li><?= $this->Html->link(__('list'), ['controller' => 'Pacientes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
                 </li>
@@ -47,7 +47,7 @@
                     <a class="collapsible-header"><?= __('Medicamentos ') ?><i class="fas fa-pills fa-lg"></i></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Medicamentos','action' => 'add'], array('class' => 'large material-icons')) ?> </li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Medicamentos', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
                             <li><?= $this->Html->link(__('list'), ['controller' => 'Medicamentos', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
@@ -56,7 +56,7 @@
                     <a class="collapsible-header"><?= __('Prescrições ') ?><i class="fas fa-file-medical-alt fa-lg"></i></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Prescricoes','action' => 'add'], array('class' => 'large material-icons')) ?> </li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Prescricoes', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
                             <li><?= $this->Html->link(__('list'), ['controller' => 'Prescricoes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
@@ -65,8 +65,8 @@
         </li>
     </ul>
     <script>
-    //script abre e fecha menu
-    $(".button-collapse").sideNav();
+        //script abre e fecha menu
+        $(".button-collapse").sideNav();
     </script>
 </nav>
 <!--Fim Menu lateral-->
@@ -114,7 +114,11 @@
                     <td class="actions">
                         <?= $this->Html->link('visibility', ['action' => 'view', $user->usuario_id], array('class' => 'large material-icons')) ?>
                         <?= $this->Html->link('edit', ['action' => 'edit', $user->usuario_id], array('class' => 'large material-icons')) ?>
-                        <?= $this->Form->postLink(__('delete'), ['action' => 'delete', $user->usuario_id], ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo), 'class' => 'large material-icons']) ?>
+                        <?= $this->Form->postLink(
+                                __('delete'),
+                                ['action' => 'delete', $user->usuario_id],
+                                ['confirm' => __('Você tem certeza que deseja deletar o usuário: {0}?', $user->nome_completo), 'class' => 'large material-icons']
+                            ) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
