@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Set-2019 às 03:02
+-- Generation Time: 28-Set-2019 às 06:18
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `bigumed`
 --
+CREATE DATABASE IF NOT EXISTS `bigumed` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bigumed`;
 
 -- --------------------------------------------------------
 
@@ -96,6 +98,24 @@ INSERT INTO `pacientes` (`paciente_id`, `rg`, `numero_convenio`, `usuario_id`, `
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `prescricao_medicamento`
+--
+
+CREATE TABLE `prescricao_medicamento` (
+  `prescricao_id` int(11) NOT NULL,
+  `medicamento_id` int(11) UNSIGNED NOT NULL,
+  `periodicidade_un` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `periodicidade_qtd` float DEFAULT NULL,
+  `posologia_un` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `posologia_qtd` float NOT NULL,
+  `duracao` float NOT NULL,
+  `continuo` tinyint(1) NOT NULL,
+  `observacao` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `prescricoes`
 --
 
@@ -121,6 +141,18 @@ CREATE TABLE `prescricoes` (
 
 INSERT INTO `prescricoes` (`precricao_id`, `periodicidade`, `quantidade`, `duracao`, `observacao`, `dt_prescricao`, `medico_id`, `paciente_id`, `medicamento_id`, `status_prescricao`, `restricao_idade`, `restricao_composicao`, `restricao_gravidez`) VALUES
 (0, 'diario', 5, 'doia anos', 'tomar varios dias', '2019-09-26 03:58:00', 1, 1, 1, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `restricoes`
+--
+
+CREATE TABLE `restricoes` (
+  `medicamento_id` int(11) UNSIGNED NOT NULL,
+  `composicao` text,
+  `gravidez` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -197,6 +229,13 @@ ALTER TABLE `pacientes`
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
+-- Indexes for table `prescricao_medicamento`
+--
+ALTER TABLE `prescricao_medicamento`
+  ADD KEY `medicamento_id` (`medicamento_id`),
+  ADD KEY `prescricao_id` (`prescricao_id`);
+
+--
 -- Indexes for table `prescricoes`
 --
 ALTER TABLE `prescricoes`
@@ -204,6 +243,12 @@ ALTER TABLE `prescricoes`
   ADD KEY `med_pres_ibfk_1` (`medico_id`),
   ADD KEY `pac_pres_ibfk_1` (`paciente_id`),
   ADD KEY `medicamento_pres_ibfk_1` (`medicamento_id`);
+
+--
+-- Indexes for table `restricoes`
+--
+ALTER TABLE `restricoes`
+  ADD KEY `medicamento_id` (`medicamento_id`);
 
 --
 -- Indexes for table `roles`
@@ -264,12 +309,25 @@ ALTER TABLE `pacientes`
   ADD CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`usuario_id`);
 
 --
+-- Limitadores para a tabela `prescricao_medicamento`
+--
+ALTER TABLE `prescricao_medicamento`
+  ADD CONSTRAINT `prescricao_medicamento_ibfk_1` FOREIGN KEY (`medicamento_id`) REFERENCES `medicamentos` (`medicamento_id`),
+  ADD CONSTRAINT `prescricao_medicamento_ibfk_2` FOREIGN KEY (`prescricao_id`) REFERENCES `prescricoes` (`precricao_id`);
+
+--
 -- Limitadores para a tabela `prescricoes`
 --
 ALTER TABLE `prescricoes`
   ADD CONSTRAINT `med_pres_ibfk_1` FOREIGN KEY (`medico_id`) REFERENCES `medicos` (`medico_id`),
   ADD CONSTRAINT `medicamento_pres_ibfk_1` FOREIGN KEY (`medicamento_id`) REFERENCES `medicamentos` (`medicamento_id`),
   ADD CONSTRAINT `pac_pres_ibfk_1` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`paciente_id`);
+
+--
+-- Limitadores para a tabela `restricoes`
+--
+ALTER TABLE `restricoes`
+  ADD CONSTRAINT `restricoes_ibfk_1` FOREIGN KEY (`medicamento_id`) REFERENCES `medicamentos` (`medicamento_id`);
 
 --
 -- Limitadores para a tabela `users`
