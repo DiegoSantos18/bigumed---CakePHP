@@ -34,7 +34,7 @@
             echo $this->Form->control('dt_prescricao');
             echo $this->Form->control('medico_id', ['options' => $medicos]);
             echo $this->Form->control('paciente_id', ['options' => $pacientes]);
-            echo $this->Form->control('medicamentos_id', ['options' => $medicamentos]);
+            echo $this->Form->control('medicamento_id', ['options' => $medicamentos]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

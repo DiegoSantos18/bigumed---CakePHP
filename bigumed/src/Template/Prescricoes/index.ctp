@@ -29,7 +29,7 @@
                 <th scope="col"><?= $this->Paginator->sort('dt_prescricao') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('medico_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('paciente_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('medicamentos_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('medicamento_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

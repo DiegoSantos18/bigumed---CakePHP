@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $dt_prescricao
  * @property int $medico_id
  * @property int $paciente_id
- * @property int $medicamentos_id
+ * @property int $medicamento_id
  *
  * @property \App\Model\Entity\Medico $medico
  * @property \App\Model\Entity\Paciente $paciente
@@ -39,7 +39,7 @@ class Prescrico extends Entity
         'dt_prescricao' => true,
         'medico_id' => true,
         'paciente_id' => true,
-        'medicamentos_id' => true,
+        'medicamento_id' => true,
         'medico' => true,
         'paciente' => true,
         'medicamento' => true
