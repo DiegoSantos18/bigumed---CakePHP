@@ -102,7 +102,6 @@
             </tr>
         </thead>
         <tbody>
-<<<<<<< HEAD
             <?php foreach ($pacientes as $paciente): ?>
             <tr>
                 <td><?= h($paciente->user->cpf) ?></td>
@@ -117,25 +116,6 @@
                     <?= $this->Form->postLink(__('delete'), ['action' => 'delete', $paciente->paciente_id],array('class' => 'large material-icons') ,['confirm' => __('Você tem certeza que você deseja deletar o paciente: {0}?', $paciente->nome_completo)]) ?>
                 </td>
             </tr>
-=======
-            <?php foreach ($pacientes as $paciente) : ?>
-                <tr>
-                    <td><?= h($paciente->rg) ?></td>
-                    <td><?= h($paciente->numero_convenio) ?></td>
-                    <td><?= $paciente->has('user') ? $this->Html->link($paciente->user->nome_completo, ['controller' => 'Users', 'action' => 'view', $paciente->user->usuario_id]) : '' ?></td>
-                    <td><?= h($paciente->data_nascimento) ?></td>
-                    <td><?= h($paciente->status_gravida ? __('Gestante') : __('Não Gestante')) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link('visibility', ['action' => 'view',  $paciente->paciente_id], array('class' => 'large material-icons')) ?>
-                        <?= $this->Html->link('edit', ['action' => 'edit', $paciente->paciente_id], array('class' => 'large material-icons')) ?>
-                        <?= $this->Form->postLink(
-                                __('delete'),
-                                ['action' => 'delete', $paciente->paciente_id],
-                                ['confirm' => __('Você tem certeza que você deseja deletar o paciente: {0}?', $paciente->nome_completo), 'class' => 'large material-icons']
-                            ) ?>
-                    </td>
-                </tr>
->>>>>>> 0365b7dca20e053932926365e8fbbcf437250ddb
             <?php endforeach; ?>
         </tbody>
     </table>
