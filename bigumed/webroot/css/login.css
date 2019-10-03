@@ -139,12 +139,6 @@
     left: 0;
  }
  
- .input:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.1);
-    z-index: 3;
- }
- 
  .input .spin {
     background: #ED2553;
     z-index: 4;

@@ -151,7 +151,9 @@ INSERT INTO `prescricoes` (`precricao_id`, `periodicidade`, `quantidade`, `durac
 CREATE TABLE `restricoes` (
   `medicamento_id` int(11) UNSIGNED NOT NULL,
   `composicao` text,
-  `gravidez` tinyint(1) DEFAULT NULL
+  `gravidez` tinyint(1) DEFAULT NULL,
+  `idade_min` FLOAT NULL,
+  `idade_max` FLOAT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

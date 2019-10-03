@@ -35,6 +35,10 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
     <?= $this->Html->css('materialize.min.css') ?>
     <?= $this->Html->css('login.css') ?>
 
+    <?= $this->Html->script('materialize.min.js', array('inline' => false)) ?>
+    <?= $this->Html->script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', array('inline' => false)) ?>
+    <?= $this->Html->script('script.js', array('inline' => false)) ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -44,11 +48,5 @@ $cakeDescription = 'Bigumed - Soluções em Gestão da Saúde!';
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
-    
-    </footer>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
