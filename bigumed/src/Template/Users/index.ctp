@@ -17,16 +17,18 @@
         <li class="no-padding">
             <ul class="collapsible collapsible-accordion" style="list-style-type: none;">
                 <li>
-                    <a class="collapsible-header"><?= __('Usuários ') ?><i class="fas fa-user fa-lg"></i></a>
+                    <a class="collapsible-header"><i class="fas fa-user fa-lg"></i><?= __(' Usuários') ?></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Users', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
-                            <li><?= $this->Html->link(__('list'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
+                            <li>
+                                <a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'add']); ?>"><i class="large material-icons">add</i> <span>Adicionar</span></a>
+                            </li>
+                            <li><?= $this->Html->link(__('listar'), ['controller' => 'Users', 'action' => 'index'], array('class' => '')) ?></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a class="collapsible-header"><?= __('Médicos ') ?><i class="fa fa-user-md fa-lg"></i></a>
+                    <a class="collapsible-header"><i class="fa fa-user-md fa-lg"></i><?= __(' Médicos') ?></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
                             <li><?= $this->Html->link(__('add'), ['controller' => 'Medicos', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
@@ -35,7 +37,7 @@
                     </div>
                 </li>
                 <li>
-                    <a class="collapsible-header"><?= __('Pacientes ') ?><i class="fas fa-user-injured fa-lg"></i></a>
+                    <a class="collapsible-header"><i class="fas fa-user-injured fa-lg"></i><?= __(' Pacientes') ?></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
                             <li><?= $this->Html->link(__('add'), ['controller' => 'Pacientes', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
@@ -44,7 +46,7 @@
                     </div>
                 </li>
                 <li>
-                    <a class="collapsible-header"><?= __('Medicamentos ') ?><i class="fas fa-pills fa-lg"></i></a>
+                    <a class="collapsible-header"><i class="fas fa-pills fa-lg"></i><?= __(' Medicamentos') ?></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
                             <li><?= $this->Html->link(__('add'), ['controller' => 'Medicamentos', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
@@ -53,10 +55,10 @@
                     </div>
                 </li>
                 <li>
-                    <a class="collapsible-header"><?= __('Prescrições ') ?><i class="fas fa-file-medical-alt fa-lg"></i></a>
+                    <a class="collapsible-header"><i class="fas fa-file-medical-alt fa-lg"></i><?= __(' Prescrições') ?></a>
                     <div class="collapsible-body">
                         <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Prescricoes', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
+                            <li><?= $this->Html->link(__('add'), ['controller' => 'Prescricoes', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
                             <li><?= $this->Html->link(__('list'), ['controller' => 'Prescricoes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
                         </ul>
                     </div>
@@ -73,7 +75,7 @@
 
 <!-- Container Principal Conteúdo-->
 <div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Usuários') ?></h3>    
+    <h3><?= __('Usuários') ?></h3>
     <!-- Tabela com Dados-->
     <table cellpadding="0" cellspacing="0" style="opacity: 0.97;background: transparent;">
         <tbody>
