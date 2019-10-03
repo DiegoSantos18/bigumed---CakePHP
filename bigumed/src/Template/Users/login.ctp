@@ -12,6 +12,7 @@
         <form>
             <fieldset>
                 <legend style="text-align: center"><?= __('LOGIN', ['class' => 'title']) ?></legend>
+                
                 <div style="width: 100%; text-align: center;">
                     <img id="imgLogoMenu" />
                 </div>
