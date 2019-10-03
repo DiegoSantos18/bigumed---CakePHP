@@ -11,12 +11,12 @@
         <?= $this->Form->create() ?>
         <form>
             <fieldset>
-                <legend><?= __('Login', ['class' => 'title']) ?></legend>
+                <legend style="text-align: center"><?= __('LOGIN', ['class' => 'title']) ?></legend>
                 <div style="width: 100%; text-align: center;">
                     <img id="imgLogoMenu" />
                 </div>
                 <?php
-                echo $this->Form->control('CPF', ['id' => 'username', 'type' => 'text', 'class' => 'validate', 'autofocus' => 'true']);
+                echo $this->Form->control('cpf', ['id' => 'username', 'type' => 'text', 'class' => 'validate', 'autofocus' => 'true']);
                 echo $this->Form->control('senha', ['id' => 'password', 'type' => 'password', 'class' => 'validate']);
                 ?>
             </fieldset>
