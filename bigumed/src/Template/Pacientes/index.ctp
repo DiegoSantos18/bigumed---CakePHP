@@ -92,13 +92,13 @@
         </tbody>
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('cpf', array('name'=>'cpf')) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('rg', array('name'=>'rg')) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('numero_convenio', array('name'=>'numero_convenio')) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('nome_completo', array('name'=>'nome_completo')) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('data_nascimento') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('status_gravida', array('name' => 'status_gravida')) ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('cpf', array('name'=>'CPF')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('rg', array('name'=>'RG')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('numero_convenio', array('name'=>'Nº convênio')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('nome_completo', array('name'=>'Nome completo')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('data_nascimento', array('name'=>'Data de nascimento')) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('status_gravida', array('name' => 'Gestante')) ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
