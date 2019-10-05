@@ -4,68 +4,11 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Paciente[]|\Cake\Collection\CollectionInterface $pacientes
  */
+
+echo $this->element('sidebar');
+
 ?>
-<!--Menu lateral-->
-<nav class="large-3 medium-4 columns" id="actions-sidebar" style="background-color:#ADD8E6;">
-    <br>
-    <a href="#" data-activates="slide-out" class="waves-effect waves-light btn-large button-collapse">MENU<i class="material-icons">menu</i></a>
-    <ul id="slide-out" class="side-nav" style="list-style-type: none;">
-        <li class="no-padding">
-            <ul class="collapsible collapsible-accordion" style="list-style-type: none;">
-                <li>
-                    <a class="collapsible-header"><?= __('Usuários ') ?><i class="fas fa-user fa-lg"></i></a>
-                    <div class="collapsible-body">
-                        <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Users', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
-                            <li><?= $this->Html->link(__('list'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a class="collapsible-header"><?= __('Médicos ') ?><i class="fa fa-user-md fa-lg"></i></a>
-                    <div class="collapsible-body">
-                        <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['action' => 'add'], array('class' => 'large material-icons')) ?> </li>
-                            <li><?= $this->Html->link(__('list'), ['controller' => 'Medicos', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a class="collapsible-header"><?= __('Pacientes ') ?><i class="fas fa-user-injured fa-lg"></i></a>
-                    <div class="collapsible-body">
-                        <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Pacientes', 'action' => 'add'], array('class' => 'large material-icons')) ?></li>
-                            <li><?= $this->Html->link(__('list'), ['controller' => 'Pacientes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a class="collapsible-header"><?= __('Medicamentos ') ?><i class="fas fa-pills fa-lg"></i></a>
-                    <div class="collapsible-body">
-                        <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Medicamentos', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
-                            <li><?= $this->Html->link(__('list'), ['controller' => 'Medicamentos', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a class="collapsible-header"><?= __('Prescrições ') ?><i class="fas fa-file-medical-alt fa-lg"></i></a>
-                    <div class="collapsible-body">
-                        <ul style="list-style-type: none;">
-                            <li><?= $this->Html->link(__('add'), ['controller' => 'Prescricoes', 'action' => 'add'], array('class' => 'large material-icons')) ?> </li>
-                            <li><?= $this->Html->link(__('list'), ['controller' => 'Prescricoes', 'action' => 'index'], array('class' => 'large material-icons')) ?></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <script>
-        //script abre e fecha menu
-        $(".button-collapse").sideNav();
-    </script>
-</nav>
-<!--Fim Menu lateral-->
+
 
 <!-- Container Principal Conteúdo-->
 <div class="pacientes index large-9 medium-8 columns content">
